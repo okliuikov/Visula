@@ -6,6 +6,7 @@ private int aa;
 //oleksii
 	public aa() {
 		int a = 0;
+		//ssss
 		a++;
 	}
 	
