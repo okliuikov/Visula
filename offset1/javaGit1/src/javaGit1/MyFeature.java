@@ -6,4 +6,5 @@ public class MyFeature {
 	// edik
 	// edik2
 	//aaa
+	// ddd
 }
