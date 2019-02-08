@@ -4,4 +4,5 @@ public class MyFeature {
 // oleksii: master work
 	// edik: master work
 	// edik
+	// edik2
 }
