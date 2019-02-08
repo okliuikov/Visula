@@ -1,2 +1,2 @@
 aaa
-user1: master
+user1: merged both master and branch1
