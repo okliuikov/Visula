@@ -1,2 +1,3 @@
 aaa
 user1: merged both master and branch1
+user1: test
