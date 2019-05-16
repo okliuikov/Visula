@@ -5,3 +5,9 @@ user1: test
 git config --global --unset credential.helper
 git config --global credential.helper 'store --file ~/.my-credentials'
 git config --list
+
+git credential-store --file ~/.my-credentials store
+protocol=dimensions
+host=stl-ta-vcw12-8
+username=dmsys
+password=dmsys_test
