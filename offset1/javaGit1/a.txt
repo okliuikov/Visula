@@ -1,3 +1,5 @@
 aaa
 user1: merged both master and branch1
 user1: test
+
+git config --global credential.helper 'store --file ~/.my-credentials'
