@@ -11,3 +11,5 @@ protocol=dimensions
 host=stl-ta-vcw12-8
 username=dmsys
 password=dmsys_test
+
+cmd /C git clone "dimensions://stl-ta-vcw12-8/cm_typical@dim12/qlarius/java_brancha_str" "C:\temp\gitRepos\java_brancha_str 89"
