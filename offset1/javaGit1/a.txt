@@ -2,4 +2,6 @@ aaa
 user1: merged both master and branch1
 user1: test
 
+git config --global --unset credential.helper
 git config --global credential.helper 'store --file ~/.my-credentials'
+git config --list
