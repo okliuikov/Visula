@@ -22,3 +22,4 @@ Connect to Dimensions server:...Connect to Dimensions server:done               
 
 
     mount std-filerprd1:/vol/vol1/dm_builds_local /dm_builds_local
+    cp -R /dm_builds_local/dv/CM_OSPREY/CM_GIT_PLUGIN_BUILD/123/ /tmp
