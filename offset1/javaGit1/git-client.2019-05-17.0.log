@@ -1,0 +1,876 @@
+#logback.classic pattern: %date{yyyyMMdd'T'HHmmss.SSSZ} %-5level [%thread] %logger{64}: %msg%n
+20190517T150615.165+0300 INFO  [main] com.microfocus.git.connector.RemoteHelperApp: Argument => version
+#logback.classic pattern: %date{yyyyMMdd'T'HHmmss.SSSZ} %-5level [%thread] %logger{64}: %msg%n
+20190517T154632.057+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => origin
+20190517T154632.065+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => dimensions://stl-ta-vcw12-8/cm_typical@dim12/qlarius/java_brancha_str
+20190517T154632.065+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => .
+20190517T154632.125+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T154632.425+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: capabilities
+20190517T154632.425+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent capabilities
+20190517T154632.431+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Git dir .
+20190517T154632.431+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: user dir /home/dmsys/git/java_brancha_str/.git
+20190517T154632.432+0300 INFO  [main] com.microfocus.git.connector.MarksFileWatchService: Watching ./dimensions/origin listening to any marks changes
+20190517T154632.469+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Last Mark id 7
+20190517T154632.472+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: option progress false
+20190517T154632.472+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent option progress false
+20190517T154632.472+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command 'option', Option 'progress', Value 'false'
+20190517T154632.472+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: option verbosity 1
+20190517T154632.472+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent option verbosity 1
+20190517T154632.473+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command 'option', Option 'verbosity', Value '1'
+20190517T154632.473+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Verbose mode
+20190517T154632.473+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: list
+20190517T154632.473+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent list
+20190517T154632.473+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Listing refs on remote
+20190517T154632.490+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Connection String dimensions://stl-ta-vcw12-8/cm_typical@dim12/qlarius/java_brancha_str
+20190517T154632.523+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Parsed as Username null Host stl-ta-vcw12-8 Port 671 database cm_typical dbconn dim12 product qlarius stream java_brancha_str folder  version -1
+20190517T154632.524+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path 'null'
+20190517T154632.538+0300 ERROR [Thread-5] com.microfocus.git.connector.scm.SCMUserCredentials: fatal: credential helper 'store --file ~/.my-credentials' told us to quit
+20190517T154644.682+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Obtained connection to Dimensions server running at stl-ta-vcw12-8:671:cm_typical@dim12 
+20190517T154644.684+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Dimensions server is on build [14.6, 2, 14.6.0 Build 9.107] 
+20190517T154644.687+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T154644.716+0300 INFO  [main] com.microfocus.git.connector.commands.AbstractCommand: Git dir ./.git exists=false isDirectoryfalse
+20190517T154644.716+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path 'null'
+20190517T154645.090+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: 
+20190517T154645.092+0300 INFO  [main] com.microfocus.git.connector.commands.ListReferenceCommand: Found number of branches 0 
+20190517T154645.092+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T154645.118+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: export
+20190517T154645.118+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent export
+20190517T154645.125+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T154645.134+0300 INFO  [main] com.microfocus.git.connector.commands.AbstractCommand: Git dir ./.git exists=false isDirectoryfalse
+20190517T154645.134+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path 'null'
+20190517T154645.141+0300 ERROR [main] com.microfocus.git.connector.commands.AbstractCommand: Command failed with error
+com.microfocus.git.connector.exception.GitConfigurationException: Dimensions server configuration could not be loaded from repository.
+	at com.microfocus.git.connector.util.ConfigurationManager.getConfiguration(ConfigurationManager.java:71)
+	at com.microfocus.git.connector.util.ConfigurationManager.getConfiguration(ConfigurationManager.java:59)
+	at com.microfocus.git.connector.util.ConfigurationManager.verifyConfigured(ConfigurationManager.java:122)
+	at com.microfocus.git.connector.commands.AbstractCommand.preConditions(AbstractCommand.java:81)
+	at com.microfocus.git.connector.commands.PushCommand.preConditions(PushCommand.java:861)
+	at com.microfocus.git.connector.commands.AbstractCommand.run(AbstractCommand.java:48)
+	at com.microfocus.git.connector.RemoteHelper.handleExport(RemoteHelper.java:366)
+	at com.microfocus.git.connector.RemoteHelper.processInput(RemoteHelper.java:219)
+	at com.microfocus.git.connector.RemoteHelper.main(RemoteHelper.java:174)
+20190517T154645.145+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Error: Dimensions server configuration could not be loaded from repository.
+20190517T154645.154+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Push finished with status false
+#logback.classic pattern: %date{yyyyMMdd'T'HHmmss.SSSZ} %-5level [%thread] %logger{64}: %msg%n
+20190517T154925.456+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => origin
+20190517T154925.466+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => dimensions://stl-ta-vcw12-8/cm_typical@dim12/qlarius/java_brancha_str/*
+20190517T154925.467+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => /home/dmsys/git/mywork1/.git
+20190517T154925.488+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '/home/dmsys/git/mywork1/.git'
+20190517T154925.794+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: capabilities
+20190517T154925.795+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent capabilities
+20190517T154925.830+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Git dir /home/dmsys/git/mywork1/.git
+20190517T154925.830+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: user dir /home/dmsys/eclipse/eclipse-committers-2019-03-R-linux-gtk-x86_64/eclipse
+20190517T154925.836+0300 INFO  [main] com.microfocus.git.connector.MarksFileWatchService: Watching /home/dmsys/git/mywork1/.git/dimensions/origin listening to any marks changes
+20190517T154925.917+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Last Mark id -1
+20190517T154925.917+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: option progress false
+20190517T154925.917+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent option progress false
+20190517T154925.917+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command 'option', Option 'progress', Value 'false'
+20190517T154925.917+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: option verbosity 1
+20190517T154925.918+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent option verbosity 1
+20190517T154925.918+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command 'option', Option 'verbosity', Value '1'
+20190517T154925.918+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Verbose mode
+20190517T154925.918+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: list
+20190517T154925.918+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent list
+20190517T154925.918+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Listing refs on remote
+20190517T154925.955+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Connection String dimensions://stl-ta-vcw12-8/cm_typical@dim12/qlarius/java_brancha_str/
+20190517T154926.018+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Parsed as Username null Host stl-ta-vcw12-8 Port 671 database cm_typical dbconn dim12 product qlarius stream java_brancha_str folder  version -1
+20190517T154926.025+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path 'null'
+#logback.classic pattern: %date{yyyyMMdd'T'HHmmss.SSSZ} %-5level [%thread] %logger{64}: %msg%n
+20190517T154931.034+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => origin
+20190517T154931.040+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => dimensions://stl-ta-vcw12-8/cm_typical@dim12/qlarius/java_brancha_str
+20190517T154931.040+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => .
+20190517T154931.065+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T154931.229+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Obtained connection to Dimensions server running at stl-ta-vcw12-8:671:cm_typical@dim12 
+20190517T154931.230+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Dimensions server is on build [14.6, 2, 14.6.0 Build 9.107] 
+20190517T154931.242+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '/home/dmsys/git/mywork1/.git'
+20190517T154931.287+0300 INFO  [main] com.microfocus.git.connector.commands.AbstractCommand: Git dir /home/dmsys/git/mywork1/.git/.git exists=false isDirectoryfalse
+20190517T154931.287+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path 'null'
+20190517T154931.607+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: capabilities
+20190517T154931.607+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent capabilities
+20190517T154931.620+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Git dir .
+20190517T154931.620+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: user dir /home/dmsys/git/java_brancha_str/.git
+20190517T154931.621+0300 INFO  [main] com.microfocus.git.connector.MarksFileWatchService: Watching ./dimensions/origin listening to any marks changes
+20190517T154931.630+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: 
+20190517T154931.631+0300 INFO  [main] com.microfocus.git.connector.commands.ListReferenceCommand: Found number of branches 0 
+20190517T154931.631+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '/home/dmsys/git/mywork1/.git'
+20190517T154931.646+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: option cloning true
+20190517T154931.646+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent option cloning true
+20190517T154931.646+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command 'option', Option 'cloning', Value 'true'
+20190517T154931.649+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: import refs/heads/master
+20190517T154931.650+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent import refs/heads/master
+20190517T154931.650+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: import refs/heads/master
+20190517T154931.652+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: 
+20190517T154931.652+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '/home/dmsys/git/mywork1/.git'
+20190517T154931.693+0300 INFO  [main] com.microfocus.git.connector.commands.CloneCommand: Git working dir /home/dmsys/git/mywork1/.git/.git
+20190517T154931.694+0300 INFO  [main] com.microfocus.git.connector.commands.CloneCommand: GIT working directory /home/dmsys/git/mywork1/.git
+20190517T154931.705+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Last Mark id 7
+20190517T154931.707+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: option progress false
+20190517T154931.707+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent option progress false
+20190517T154931.708+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command 'option', Option 'progress', Value 'false'
+20190517T154931.708+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: option verbosity 1
+20190517T154931.708+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent option verbosity 1
+20190517T154931.708+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command 'option', Option 'verbosity', Value '1'
+20190517T154931.708+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Verbose mode
+20190517T154931.709+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: list
+20190517T154931.709+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent list
+20190517T154931.709+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Listing refs on remote
+20190517T154931.752+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Connection String dimensions://stl-ta-vcw12-8/cm_typical@dim12/qlarius/java_brancha_str
+20190517T154931.796+0300 INFO  [main] com.microfocus.git.connector.commands.CloneCommand: no Large file extensions set 
+20190517T154931.855+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Parsed as Username null Host stl-ta-vcw12-8 Port 671 database cm_typical dbconn dim12 product qlarius stream java_brancha_str folder  version -1
+20190517T154931.869+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path 'null'
+20190517T154931.953+0300 INFO  [main] com.microfocus.git.connector.commands.CloneCommand: Last change set id 268 
+20190517T154931.953+0300 INFO  [main] com.microfocus.git.connector.commands.CloneCommand: Temporary working directory for checkouts /tmp/git-st8704798622364261594
+20190517T154932.163+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Fetching files from Stream - QLARIUS:JAVA_BRANCHA_STR Folder-  to directory /tmp/git-st8704798622364261594
+20190517T154932.494+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService:  Change set 268 date Fri May 17 11:33:27 EEST 2019 
+20190517T154934.393+0300 INFO  [main] com.microfocus.git.connector.commands.CloneCommand: Updating changeset commit maps..
+20190517T154934.396+0300 INFO  [main] com.microfocus.git.connector.util.Configuration: No process item prompt option found in config
+20190517T154934.431+0300 INFO  [main] com.microfocus.git.connector.util.Configuration: Configuration changes saved succesfully
+20190517T154934.689+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Released connection to Dimensions server running at stl-ta-vcw12-8:671:cm_typical@dim12 
+20190517T154934.728+0300 INFO  [main] com.microfocus.git.connector.commands.CloneCommand: Disconnected from SCM server
+20190517T154934.729+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Clone finished with status true
+20190517T154934.729+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: 
+20190517T154936.081+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Obtained connection to Dimensions server running at stl-ta-vcw12-8:671:cm_typical@dim12 
+20190517T154936.083+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Dimensions server is on build [14.6, 2, 14.6.0 Build 9.107] 
+20190517T154936.085+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T154936.123+0300 INFO  [main] com.microfocus.git.connector.commands.AbstractCommand: Git dir ./.git exists=false isDirectoryfalse
+20190517T154936.123+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path 'null'
+20190517T154936.439+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: 
+20190517T154936.441+0300 INFO  [main] com.microfocus.git.connector.commands.ListReferenceCommand: Found number of branches 0 
+20190517T154936.441+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T154936.452+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: export
+20190517T154936.453+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent export
+20190517T154936.472+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T154936.490+0300 INFO  [main] com.microfocus.git.connector.commands.AbstractCommand: Git dir ./.git exists=false isDirectoryfalse
+20190517T154936.491+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path 'null'
+20190517T154936.499+0300 ERROR [main] com.microfocus.git.connector.commands.AbstractCommand: Command failed with error
+com.microfocus.git.connector.exception.GitConfigurationException: Dimensions server configuration could not be loaded from repository.
+	at com.microfocus.git.connector.util.ConfigurationManager.getConfiguration(ConfigurationManager.java:71)
+	at com.microfocus.git.connector.util.ConfigurationManager.getConfiguration(ConfigurationManager.java:59)
+	at com.microfocus.git.connector.util.ConfigurationManager.verifyConfigured(ConfigurationManager.java:122)
+	at com.microfocus.git.connector.commands.AbstractCommand.preConditions(AbstractCommand.java:81)
+	at com.microfocus.git.connector.commands.PushCommand.preConditions(PushCommand.java:861)
+	at com.microfocus.git.connector.commands.AbstractCommand.run(AbstractCommand.java:48)
+	at com.microfocus.git.connector.RemoteHelper.handleExport(RemoteHelper.java:366)
+	at com.microfocus.git.connector.RemoteHelper.processInput(RemoteHelper.java:219)
+	at com.microfocus.git.connector.RemoteHelper.main(RemoteHelper.java:174)
+20190517T154936.505+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Error: Dimensions server configuration could not be loaded from repository.
+20190517T154936.514+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Push finished with status false
+#logback.classic pattern: %date{yyyyMMdd'T'HHmmss.SSSZ} %-5level [%thread] %logger{64}: %msg%n
+20190517T155127.927+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => origin
+20190517T155127.935+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => dimensions://stl-ta-vcw12-8/cm_typical@dim12/qlarius/java_brancha_str/*
+20190517T155127.935+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => .
+20190517T155127.954+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T155128.188+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T155128.200+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: capabilities
+20190517T155128.200+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent capabilities
+20190517T155128.203+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Git dir .
+20190517T155128.203+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: user dir /home/dmsys/git/mywork1/.git
+20190517T155128.204+0300 INFO  [main] com.microfocus.git.connector.MarksFileWatchService: Watching ./dimensions/origin listening to any marks changes
+20190517T155128.206+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Last Mark id 1
+20190517T155128.208+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: option progress false
+20190517T155128.208+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent option progress false
+20190517T155128.208+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command 'option', Option 'progress', Value 'false'
+20190517T155128.208+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: option verbosity 1
+20190517T155128.209+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent option verbosity 1
+20190517T155128.209+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command 'option', Option 'verbosity', Value '1'
+20190517T155128.209+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Verbose mode
+20190517T155128.210+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: list
+20190517T155128.210+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent list
+20190517T155128.210+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Listing refs on remote
+20190517T155128.227+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Connection String dimensions://dmsys@stl-ta-vcw12-8:671/cm_typical@dim12/qlarius/java_brancha_str/
+20190517T155128.255+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Parsed as Username dmsys Host stl-ta-vcw12-8 Port 671 database cm_typical dbconn dim12 product qlarius stream java_brancha_str folder  version -1
+20190517T155128.256+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path 'null'
+20190517T155131.411+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Obtained connection to Dimensions server running at stl-ta-vcw12-8:671:cm_typical@dim12 
+20190517T155131.413+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Dimensions server is on build [14.6, 2, 14.6.0 Build 9.107] 
+20190517T155131.416+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T155131.445+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T155131.748+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: 
+20190517T155131.758+0300 INFO  [main] com.microfocus.git.connector.commands.ListReferenceCommand: Found number of branches 0 
+20190517T155131.759+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T155131.781+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: export
+20190517T155131.781+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent export
+20190517T155131.793+0300 INFO  [Thread-2] com.microfocus.git.connector.MarksFileWatchService: git.marks file updated...Reloading it
+20190517T155131.798+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T155131.809+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T155131.817+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T155131.841+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T155131.856+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Connection string dimensions://dmsys@stl-ta-vcw12-8:671/cm_typical@dim12/qlarius/java_brancha_str/  dimensions://dmsys@stl-ta-vcw12-8:671/cm_typical@dim12/qlarius/java_brancha_str/ 
+20190517T155132.100+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: feature done
+20190517T155132.100+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: blob
+20190517T155132.100+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Read blob
+20190517T155132.101+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: mark :2
+20190517T155132.101+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: data 5884
+20190517T155132.101+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Mark id 2 5884
+20190517T155132.101+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Writing to temp file Mark2
+20190517T155132.102+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: writing numBytes 5884 
+20190517T155132.102+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: 
+20190517T155132.102+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: commit refs/heads/master
+20190517T155132.102+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: mark :3
+20190517T155132.102+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Read commit markId mark :3
+20190517T155132.102+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Matched pattern 3 3 
+20190517T155132.102+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Commit id 3 
+20190517T155132.102+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: author DMSYS <dmsys@dmsys-VirtualBox> 1558097440 +0300
+20190517T155132.102+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Read author data author DMSYS <dmsys@dmsys-VirtualBox> 1558097440 +0300
+20190517T155132.107+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Matched patternn  DMSYS dmsys@dmsys-VirtualBox 1558097440 +0300 
+20190517T155132.108+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: committer DMSYS <dmsys@dmsys-VirtualBox> 1558097440 +0300
+20190517T155132.108+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Read committer data committer DMSYS <dmsys@dmsys-VirtualBox> 1558097440 +0300 
+20190517T155132.109+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: When 1558097440 timezone +0300
+20190517T155132.109+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Found commit 18f37dd47ee9b1798b00c7cfad06f92abbfebef4 by mark 3
+20190517T155132.114+0300 INFO  [main] com.microfocus.git.connector.mapping.ChangesetCommitMapUtil: File config git-cm 
+20190517T155132.114+0300 INFO  [main] com.microfocus.git.connector.mapping.ChangesetCommitMapUtil: Shortened ref name refs/heads/master 
+20190517T155132.114+0300 INFO  [main] com.microfocus.git.connector.mapping.ChangesetCommitMapUtil: Corresponding SCM Ref uid 4217404 
+20190517T155132.115+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Date Fri May 17 15:50:40 EEST 2019
+20190517T155132.122+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Matched committer pattern DMSYS dmsys@dmsys-VirtualBox 1558097440 
+20190517T155132.122+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: data 18
+20190517T155132.122+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Export line: commit from ubuntu
+20190517T155132.122+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Dry run false 
+20190517T155132.125+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: from :1
+20190517T155132.125+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Next line from :1
+20190517T155132.126+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: from 1
+20190517T155132.255+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Ref master 
+20190517T155132.319+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Master head commit id 18f37dd47ee9b1798b00c7cfad06f92abbfebef4
+20190517T155132.321+0300 INFO  [main] com.microfocus.git.connector.mapping.ChangeSetCommitMap: branch name refs/heads/master
+20190517T155132.323+0300 INFO  [main] com.microfocus.git.connector.mapping.ChangeSetCommitMap: branch name refs/heads/master
+20190517T155132.540+0300 INFO  [main] com.microfocus.git.connector.mapping.ChangeSetCommitMap: branch name refs/heads/master
+20190517T155132.553+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: M 100644 :2 "Qlarius Underwriter/qlarius/interfaces/AutoQuote.java"
+20190517T155132.553+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Next line M 100644 :2 "Qlarius Underwriter/qlarius/interfaces/AutoQuote.java"
+20190517T155132.555+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Matched file modify pattern Mode 100644 markid 2 addFilePath Qlarius Underwriter/qlarius/interfaces/AutoQuote.java 
+20190517T155132.569+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: 
+20190517T155132.569+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Next line 
+20190517T155132.569+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Completed processing a commit
+20190517T155132.698+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: done
+20190517T155134.249+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Mapping changeset 270 to commit id 18f37dd47ee9b1798b00c7cfad06f92abbfebef4
+20190517T155134.296+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Committed to Dimensions successfully
+20190517T155134.475+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Released connection to Dimensions server running at stl-ta-vcw12-8:671:cm_typical@dim12 
+20190517T155134.476+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: 
+20190517T155134.492+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Push finished with status true
+20190517T155134.494+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: 
+#logback.classic pattern: %date{yyyyMMdd'T'HHmmss.SSSZ} %-5level [%thread] %logger{64}: %msg%n
+20190517T163753.611+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => origin
+20190517T163753.616+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => dimensions://stl-ta-vcw12-8/cm_typical@dim12/qlarius/java_brancha_str/*
+20190517T163753.616+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => .
+20190517T163753.633+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T163753.788+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T163753.814+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: capabilities
+20190517T163753.814+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent capabilities
+20190517T163753.816+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Git dir .
+20190517T163753.817+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: user dir /home/dmsys/git/mywork1/.git
+20190517T163753.817+0300 INFO  [main] com.microfocus.git.connector.MarksFileWatchService: Watching ./dimensions/origin listening to any marks changes
+20190517T163753.819+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Last Mark id 3
+20190517T163753.821+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: option progress false
+20190517T163753.821+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent option progress false
+20190517T163753.822+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command 'option', Option 'progress', Value 'false'
+20190517T163753.822+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: option verbosity 1
+20190517T163753.822+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent option verbosity 1
+20190517T163753.822+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command 'option', Option 'verbosity', Value '1'
+20190517T163753.822+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Verbose mode
+20190517T163753.823+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: list
+20190517T163753.823+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent list
+20190517T163753.823+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Listing refs on remote
+20190517T163753.838+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Connection String dimensions://dmsys@stl-ta-vcw12-8:671/cm_typical@dim12/qlarius/java_brancha_str/
+20190517T163753.861+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Parsed as Username dmsys Host stl-ta-vcw12-8 Port 671 database cm_typical dbconn dim12 product qlarius stream java_brancha_str folder  version -1
+20190517T163753.862+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path 'null'
+20190517T163753.890+0300 ERROR [Thread-5] com.microfocus.git.connector.scm.SCMUserCredentials: fatal: credential helper 'store --file ~/.my-credentials' told us to quit
+20190517T163804.159+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Obtained connection to Dimensions server running at stl-ta-vcw12-8:671:cm_typical@dim12 
+20190517T163804.161+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Dimensions server is on build [14.6, 2, 14.6.0 Build 9.107] 
+20190517T163804.163+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T163804.186+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T163804.536+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: 
+20190517T163804.540+0300 INFO  [main] com.microfocus.git.connector.commands.ListReferenceCommand: Found number of branches 0 
+20190517T163804.542+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T163804.565+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: export
+20190517T163804.565+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent export
+20190517T163804.573+0300 INFO  [Thread-2] com.microfocus.git.connector.MarksFileWatchService: git.marks file updated...Reloading it
+20190517T163804.585+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T163804.590+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T163804.601+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T163804.609+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T163804.612+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Connection string dimensions://dmsys@stl-ta-vcw12-8:671/cm_typical@dim12/qlarius/java_brancha_str/  dimensions://dmsys@stl-ta-vcw12-8:671/cm_typical@dim12/qlarius/java_brancha_str/ 
+20190517T163804.812+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: feature done
+20190517T163804.813+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: blob
+20190517T163804.816+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Read blob
+20190517T163804.816+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: mark :4
+20190517T163804.816+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: data 5907
+20190517T163804.816+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Mark id 4 5907
+20190517T163804.816+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Writing to temp file Mark4
+20190517T163804.817+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: writing numBytes 5907 
+20190517T163804.817+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: 
+20190517T163804.817+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: commit refs/heads/master
+20190517T163804.817+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: mark :5
+20190517T163804.817+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Read commit markId mark :5
+20190517T163804.817+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Matched pattern 5 5 
+20190517T163804.817+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Commit id 5 
+20190517T163804.817+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: author DMSYS <dmsys@dmsys-VirtualBox> 1558100270 +0300
+20190517T163804.817+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Read author data author DMSYS <dmsys@dmsys-VirtualBox> 1558100270 +0300
+20190517T163804.817+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Matched patternn  DMSYS dmsys@dmsys-VirtualBox 1558100270 +0300 
+20190517T163804.817+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: committer DMSYS <dmsys@dmsys-VirtualBox> 1558100270 +0300
+20190517T163804.817+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Read committer data committer DMSYS <dmsys@dmsys-VirtualBox> 1558100270 +0300 
+20190517T163804.818+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: When 1558100270 timezone +0300
+20190517T163804.818+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Found commit d6b5dd381a624636d1bc81029af697d16683369f by mark 5
+20190517T163804.819+0300 INFO  [main] com.microfocus.git.connector.mapping.ChangesetCommitMapUtil: File config git-cm 
+20190517T163804.834+0300 INFO  [main] com.microfocus.git.connector.mapping.ChangesetCommitMapUtil: Shortened ref name refs/heads/master 
+20190517T163804.834+0300 INFO  [main] com.microfocus.git.connector.mapping.ChangesetCommitMapUtil: Corresponding SCM Ref uid 4217404 
+20190517T163804.834+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Date Fri May 17 16:37:50 EEST 2019
+20190517T163804.835+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Matched committer pattern DMSYS dmsys@dmsys-VirtualBox 1558100270 
+20190517T163804.835+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: data 19
+20190517T163804.835+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Export line: commit from eclipse
+20190517T163804.835+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Dry run false 
+20190517T163804.836+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: from :3
+20190517T163804.836+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Next line from :3
+20190517T163804.836+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: from 3
+20190517T163804.971+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Ref master 
+20190517T163805.057+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Master head commit id d6b5dd381a624636d1bc81029af697d16683369f
+20190517T163805.058+0300 INFO  [main] com.microfocus.git.connector.mapping.ChangeSetCommitMap: branch name refs/heads/master
+20190517T163805.060+0300 INFO  [main] com.microfocus.git.connector.mapping.ChangeSetCommitMap: branch name refs/heads/master
+20190517T163805.291+0300 INFO  [main] com.microfocus.git.connector.mapping.ChangeSetCommitMap: branch name refs/heads/master
+20190517T163805.292+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: M 100644 :4 "Qlarius Underwriter/qlarius/interfaces/AutoQuote.java"
+20190517T163805.292+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Next line M 100644 :4 "Qlarius Underwriter/qlarius/interfaces/AutoQuote.java"
+20190517T163805.301+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Matched file modify pattern Mode 100644 markid 4 addFilePath Qlarius Underwriter/qlarius/interfaces/AutoQuote.java 
+20190517T163805.303+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: 
+20190517T163805.303+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Next line 
+20190517T163805.303+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Completed processing a commit
+20190517T163805.449+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: done
+20190517T163807.845+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Mapping changeset 278 to commit id d6b5dd381a624636d1bc81029af697d16683369f
+20190517T163807.894+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Committed to Dimensions successfully
+20190517T163808.434+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Released connection to Dimensions server running at stl-ta-vcw12-8:671:cm_typical@dim12 
+20190517T163808.434+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: 
+20190517T163808.446+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Push finished with status true
+20190517T163808.453+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: 
+#logback.classic pattern: %date{yyyyMMdd'T'HHmmss.SSSZ} %-5level [%thread] %logger{64}: %msg%n
+20190517T165405.033+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => origin
+20190517T165405.040+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => dimensions://stl-ta-vcw12-8/cm_typical@dim12/qlarius/java_brancha_str/*
+20190517T165405.040+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => /home/dmsys/git/work2/.git
+20190517T165405.057+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '/home/dmsys/git/work2/.git'
+20190517T165405.181+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: capabilities
+20190517T165405.181+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent capabilities
+20190517T165405.183+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Git dir /home/dmsys/git/work2/.git
+20190517T165405.183+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: user dir /home/dmsys/eclipse/java-2018-12/eclipse
+20190517T165405.186+0300 INFO  [main] com.microfocus.git.connector.MarksFileWatchService: Watching /home/dmsys/git/work2/.git/dimensions/origin listening to any marks changes
+20190517T165405.205+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Last Mark id -1
+20190517T165405.206+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: option progress false
+20190517T165405.206+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent option progress false
+20190517T165405.206+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command 'option', Option 'progress', Value 'false'
+20190517T165405.207+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: option verbosity 1
+20190517T165405.208+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent option verbosity 1
+20190517T165405.208+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command 'option', Option 'verbosity', Value '1'
+20190517T165405.208+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Verbose mode
+20190517T165405.208+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: list
+20190517T165405.208+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent list
+20190517T165405.208+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Listing refs on remote
+20190517T165405.221+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Connection String dimensions://stl-ta-vcw12-8/cm_typical@dim12/qlarius/java_brancha_str/
+20190517T165405.241+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Parsed as Username null Host stl-ta-vcw12-8 Port 671 database cm_typical dbconn dim12 product qlarius stream java_brancha_str folder  version -1
+20190517T165405.249+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path 'null'
+20190517T165408.220+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Obtained connection to Dimensions server running at stl-ta-vcw12-8:671:cm_typical@dim12 
+20190517T165408.220+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Dimensions server is on build [14.6, 2, 14.6.0 Build 9.107] 
+20190517T165408.222+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '/home/dmsys/git/work2/.git'
+20190517T165408.242+0300 INFO  [main] com.microfocus.git.connector.commands.AbstractCommand: Git dir /home/dmsys/git/work2/.git/.git exists=false isDirectoryfalse
+20190517T165408.246+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path 'null'
+20190517T165408.418+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: 
+20190517T165408.426+0300 INFO  [main] com.microfocus.git.connector.commands.ListReferenceCommand: Found number of branches 0 
+20190517T165408.426+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '/home/dmsys/git/work2/.git'
+20190517T165408.441+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: option cloning true
+20190517T165408.441+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent option cloning true
+20190517T165408.442+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command 'option', Option 'cloning', Value 'true'
+20190517T165408.446+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: import refs/heads/master
+20190517T165408.446+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent import refs/heads/master
+20190517T165408.446+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: import refs/heads/master
+20190517T165408.447+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: 
+20190517T165408.447+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '/home/dmsys/git/work2/.git'
+20190517T165408.471+0300 INFO  [main] com.microfocus.git.connector.commands.CloneCommand: Git working dir /home/dmsys/git/work2/.git/.git
+20190517T165408.472+0300 INFO  [main] com.microfocus.git.connector.commands.CloneCommand: GIT working directory /home/dmsys/git/work2/.git
+20190517T165408.589+0300 INFO  [main] com.microfocus.git.connector.commands.CloneCommand: no Large file extensions set 
+20190517T165408.746+0300 INFO  [main] com.microfocus.git.connector.commands.CloneCommand: Last change set id 278 
+20190517T165408.747+0300 INFO  [main] com.microfocus.git.connector.commands.CloneCommand: Temporary working directory for checkouts /tmp/git-st315207580327466700
+20190517T165408.973+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Fetching files from Stream - QLARIUS:JAVA_BRANCHA_STR Folder-  to directory /tmp/git-st315207580327466700
+20190517T165409.341+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService:  Change set 278 date Fri May 17 14:37:50 EEST 2019 
+20190517T165410.851+0300 INFO  [main] com.microfocus.git.connector.commands.CloneCommand: Updating changeset commit maps..
+20190517T165410.855+0300 INFO  [main] com.microfocus.git.connector.util.Configuration: No process item prompt option found in config
+20190517T165410.868+0300 INFO  [main] com.microfocus.git.connector.util.Configuration: Configuration changes saved succesfully
+20190517T165411.049+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Released connection to Dimensions server running at stl-ta-vcw12-8:671:cm_typical@dim12 
+20190517T165411.071+0300 INFO  [main] com.microfocus.git.connector.commands.CloneCommand: Disconnected from SCM server
+20190517T165411.071+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Clone finished with status true
+20190517T165411.071+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: 
+#logback.classic pattern: %date{yyyyMMdd'T'HHmmss.SSSZ} %-5level [%thread] %logger{64}: %msg%n
+20190517T165558.860+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => origin
+20190517T165558.865+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => dimensions://stl-ta-vcw12-8/cm_typical@dim12/qlarius/java_brancha_str/*
+20190517T165558.865+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => .
+20190517T165558.892+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T165559.205+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T165559.229+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: capabilities
+20190517T165559.229+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent capabilities
+20190517T165559.234+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Git dir .
+20190517T165559.235+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: user dir /home/dmsys/git/work2/.git
+20190517T165559.236+0300 INFO  [main] com.microfocus.git.connector.MarksFileWatchService: Watching ./dimensions/origin listening to any marks changes
+20190517T165559.245+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Last Mark id 1
+20190517T165559.246+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: option progress false
+20190517T165559.246+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent option progress false
+20190517T165559.246+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command 'option', Option 'progress', Value 'false'
+20190517T165559.248+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: option verbosity 1
+20190517T165559.248+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent option verbosity 1
+20190517T165559.248+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command 'option', Option 'verbosity', Value '1'
+20190517T165559.248+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Verbose mode
+20190517T165559.249+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: list
+20190517T165559.249+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent list
+20190517T165559.249+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Listing refs on remote
+20190517T165559.275+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Connection String dimensions://dmsys@stl-ta-vcw12-8:671/cm_typical@dim12/qlarius/java_brancha_str/
+20190517T165559.343+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Parsed as Username dmsys Host stl-ta-vcw12-8 Port 671 database cm_typical dbconn dim12 product qlarius stream java_brancha_str folder  version -1
+20190517T165559.349+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path 'null'
+20190517T165602.833+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Obtained connection to Dimensions server running at stl-ta-vcw12-8:671:cm_typical@dim12 
+20190517T165602.837+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Dimensions server is on build [14.6, 2, 14.6.0 Build 9.107] 
+20190517T165602.849+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T165602.891+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T165603.180+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: 
+20190517T165603.182+0300 INFO  [main] com.microfocus.git.connector.commands.ListReferenceCommand: Found number of branches 0 
+20190517T165603.184+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T165603.211+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: export
+20190517T165603.212+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent export
+20190517T165603.216+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T165603.221+0300 INFO  [Thread-2] com.microfocus.git.connector.MarksFileWatchService: git.marks file updated...Reloading it
+20190517T165603.233+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T165603.238+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T165603.251+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T165603.261+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Connection string dimensions://dmsys@stl-ta-vcw12-8:671/cm_typical@dim12/qlarius/java_brancha_str/  dimensions://dmsys@stl-ta-vcw12-8:671/cm_typical@dim12/qlarius/java_brancha_str/ 
+20190517T165603.494+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: feature done
+20190517T165603.494+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: blob
+20190517T165603.494+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Read blob
+20190517T165603.494+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: mark :2
+20190517T165603.495+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: data 5930
+20190517T165603.495+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Mark id 2 5930
+20190517T165603.495+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Writing to temp file Mark2
+20190517T165603.495+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: writing numBytes 5930 
+20190517T165603.495+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: 
+20190517T165603.495+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: commit refs/heads/master
+20190517T165603.495+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: mark :3
+20190517T165603.495+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Read commit markId mark :3
+20190517T165603.495+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Matched pattern 3 3 
+20190517T165603.495+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Commit id 3 
+20190517T165603.496+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: author DMSYS <dmsys@dmsys-VirtualBox> 1558101337 +0300
+20190517T165603.496+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Read author data author DMSYS <dmsys@dmsys-VirtualBox> 1558101337 +0300
+20190517T165603.496+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Matched patternn  DMSYS dmsys@dmsys-VirtualBox 1558101337 +0300 
+20190517T165603.496+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: committer DMSYS <dmsys@dmsys-VirtualBox> 1558101337 +0300
+20190517T165603.496+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Read committer data committer DMSYS <dmsys@dmsys-VirtualBox> 1558101337 +0300 
+20190517T165603.496+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: When 1558101337 timezone +0300
+20190517T165603.496+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Found commit 86e613c1c422ffed02001fc775782b384b4d5c7f by mark 3
+20190517T165603.498+0300 INFO  [main] com.microfocus.git.connector.mapping.ChangesetCommitMapUtil: File config git-cm 
+20190517T165603.498+0300 INFO  [main] com.microfocus.git.connector.mapping.ChangesetCommitMapUtil: Shortened ref name refs/heads/master 
+20190517T165603.498+0300 INFO  [main] com.microfocus.git.connector.mapping.ChangesetCommitMapUtil: Corresponding SCM Ref uid 4217404 
+20190517T165603.499+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Date Fri May 17 16:55:37 EEST 2019
+20190517T165603.499+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Matched committer pattern DMSYS dmsys@dmsys-VirtualBox 1558101337 
+20190517T165603.499+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: data 18
+20190517T165603.499+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Export line: commit from ubuntu
+20190517T165603.499+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Dry run false 
+20190517T165603.500+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: from :1
+20190517T165603.500+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Next line from :1
+20190517T165603.500+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: from 1
+20190517T165603.642+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Ref master 
+20190517T165603.707+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Master head commit id 86e613c1c422ffed02001fc775782b384b4d5c7f
+20190517T165603.709+0300 INFO  [main] com.microfocus.git.connector.mapping.ChangeSetCommitMap: branch name refs/heads/master
+20190517T165603.710+0300 INFO  [main] com.microfocus.git.connector.mapping.ChangeSetCommitMap: branch name refs/heads/master
+20190517T165603.928+0300 INFO  [main] com.microfocus.git.connector.mapping.ChangeSetCommitMap: branch name refs/heads/master
+20190517T165603.931+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: M 100644 :2 "Qlarius Underwriter/qlarius/interfaces/AutoQuote.java"
+20190517T165603.931+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Next line M 100644 :2 "Qlarius Underwriter/qlarius/interfaces/AutoQuote.java"
+20190517T165603.933+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Matched file modify pattern Mode 100644 markid 2 addFilePath Qlarius Underwriter/qlarius/interfaces/AutoQuote.java 
+20190517T165603.940+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: 
+20190517T165603.941+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Next line 
+20190517T165603.947+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Completed processing a commit
+20190517T165604.082+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: done
+20190517T165605.916+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Mapping changeset 280 to commit id 86e613c1c422ffed02001fc775782b384b4d5c7f
+20190517T165605.961+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Committed to Dimensions successfully
+20190517T165606.140+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Released connection to Dimensions server running at stl-ta-vcw12-8:671:cm_typical@dim12 
+20190517T165606.141+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: 
+20190517T165606.165+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Push finished with status true
+20190517T165606.172+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: 
+#logback.classic pattern: %date{yyyyMMdd'T'HHmmss.SSSZ} %-5level [%thread] %logger{64}: %msg%n
+20190517T165908.322+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => origin
+20190517T165908.336+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => dimensions://stl-ta-vcw12-8/cm_typical@dim12/qlarius/java_brancha_str/*
+20190517T165908.336+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => .
+20190517T165908.355+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T165908.606+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T165908.621+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: capabilities
+20190517T165908.622+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent capabilities
+20190517T165908.624+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Git dir .
+20190517T165908.624+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: user dir /home/dmsys/git/work2/.git
+20190517T165908.629+0300 INFO  [main] com.microfocus.git.connector.MarksFileWatchService: Watching ./dimensions/origin listening to any marks changes
+20190517T165908.631+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Last Mark id 3
+20190517T165908.633+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: option progress false
+20190517T165908.634+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent option progress false
+20190517T165908.634+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command 'option', Option 'progress', Value 'false'
+20190517T165908.634+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: option verbosity 1
+20190517T165908.634+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent option verbosity 1
+20190517T165908.634+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command 'option', Option 'verbosity', Value '1'
+20190517T165908.634+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Verbose mode
+20190517T165908.635+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: list
+20190517T165908.635+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent list
+20190517T165908.635+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Listing refs on remote
+20190517T165908.656+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Connection String dimensions://dmsys@stl-ta-vcw12-8:671/cm_typical@dim12/qlarius/java_brancha_str/
+20190517T165908.696+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Parsed as Username dmsys Host stl-ta-vcw12-8 Port 671 database cm_typical dbconn dim12 product qlarius stream java_brancha_str folder  version -1
+20190517T165908.702+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path 'null'
+20190517T165912.523+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Obtained connection to Dimensions server running at stl-ta-vcw12-8:671:cm_typical@dim12 
+20190517T165912.524+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Dimensions server is on build [14.6, 2, 14.6.0 Build 9.107] 
+20190517T165912.525+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T165912.547+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T165912.828+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: 
+20190517T165912.834+0300 INFO  [main] com.microfocus.git.connector.commands.ListReferenceCommand: Found number of branches 0 
+20190517T165912.834+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T165912.849+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: export
+20190517T165912.850+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent export
+20190517T165912.863+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T165912.867+0300 INFO  [Thread-2] com.microfocus.git.connector.MarksFileWatchService: git.marks file updated...Reloading it
+20190517T165912.870+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T165912.885+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T165912.900+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T165912.906+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Connection string dimensions://dmsys@stl-ta-vcw12-8:671/cm_typical@dim12/qlarius/java_brancha_str/  dimensions://dmsys@stl-ta-vcw12-8:671/cm_typical@dim12/qlarius/java_brancha_str/ 
+20190517T165913.079+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: feature done
+20190517T165913.080+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: blob
+20190517T165913.080+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Read blob
+20190517T165913.080+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: mark :4
+20190517T165913.080+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: data 16907
+20190517T165913.080+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Mark id 4 16907
+20190517T165913.080+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Writing to temp file Mark4
+20190517T165913.085+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: writing numBytes 16907 
+20190517T165913.085+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: 
+20190517T165913.085+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: commit refs/heads/master
+20190517T165913.085+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: mark :5
+20190517T165913.085+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Read commit markId mark :5
+20190517T165913.085+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Matched pattern 5 5 
+20190517T165913.085+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Commit id 5 
+20190517T165913.085+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: author DMSYS <dmsys@dmsys-VirtualBox> 1558101545 +0300
+20190517T165913.085+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Read author data author DMSYS <dmsys@dmsys-VirtualBox> 1558101545 +0300
+20190517T165913.086+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Matched patternn  DMSYS dmsys@dmsys-VirtualBox 1558101545 +0300 
+20190517T165913.086+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: committer DMSYS <dmsys@dmsys-VirtualBox> 1558101545 +0300
+20190517T165913.086+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Read committer data committer DMSYS <dmsys@dmsys-VirtualBox> 1558101545 +0300 
+20190517T165913.086+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: When 1558101545 timezone +0300
+20190517T165913.086+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Found commit 97e033304e0e298203a5c834e9b21592e3a9be92 by mark 5
+20190517T165913.091+0300 INFO  [main] com.microfocus.git.connector.mapping.ChangesetCommitMapUtil: File config git-cm 
+20190517T165913.091+0300 INFO  [main] com.microfocus.git.connector.mapping.ChangesetCommitMapUtil: Shortened ref name refs/heads/master 
+20190517T165913.091+0300 INFO  [main] com.microfocus.git.connector.mapping.ChangesetCommitMapUtil: Corresponding SCM Ref uid 4217404 
+20190517T165913.092+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Date Fri May 17 16:59:05 EEST 2019
+20190517T165913.100+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Matched committer pattern DMSYS dmsys@dmsys-VirtualBox 1558101545 
+20190517T165913.100+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: data 18
+20190517T165913.101+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Export line: commit from ubuntu
+20190517T165913.101+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Dry run false 
+20190517T165913.101+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: from :3
+20190517T165913.101+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Next line from :3
+20190517T165913.101+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: from 3
+20190517T165913.233+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Ref master 
+20190517T165913.304+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Master head commit id 97e033304e0e298203a5c834e9b21592e3a9be92
+20190517T165913.307+0300 INFO  [main] com.microfocus.git.connector.mapping.ChangeSetCommitMap: branch name refs/heads/master
+20190517T165913.314+0300 INFO  [main] com.microfocus.git.connector.mapping.ChangeSetCommitMap: branch name refs/heads/master
+20190517T165913.545+0300 INFO  [main] com.microfocus.git.connector.mapping.ChangeSetCommitMap: branch name refs/heads/master
+20190517T165913.547+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: M 100644 :4 "Qlarius Underwriter/qlarius/interfaces/LifeQuote.java"
+20190517T165913.552+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Next line M 100644 :4 "Qlarius Underwriter/qlarius/interfaces/LifeQuote.java"
+20190517T165913.562+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Matched file modify pattern Mode 100644 markid 4 addFilePath Qlarius Underwriter/qlarius/interfaces/LifeQuote.java 
+20190517T165913.575+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: 
+20190517T165913.576+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Next line 
+20190517T165913.576+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Completed processing a commit
+20190517T165913.721+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: done
+20190517T165916.346+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Mapping changeset 282 to commit id 97e033304e0e298203a5c834e9b21592e3a9be92
+20190517T165916.401+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Committed to Dimensions successfully
+20190517T165917.263+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Released connection to Dimensions server running at stl-ta-vcw12-8:671:cm_typical@dim12 
+20190517T165917.264+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: 
+20190517T165917.275+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Push finished with status true
+20190517T165917.279+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: 
+#logback.classic pattern: %date{yyyyMMdd'T'HHmmss.SSSZ} %-5level [%thread] %logger{64}: %msg%n
+20190517T170756.062+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => origin
+20190517T170756.067+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => dimensions://stl-ta-vcw12-8/cm_typical@dim12/qlarius/java_brancha_str/*
+20190517T170756.067+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => .
+20190517T170756.083+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T170756.244+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T170756.273+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: capabilities
+20190517T170756.273+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent capabilities
+20190517T170756.276+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Git dir .
+20190517T170756.276+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: user dir /home/dmsys/git/work2/.git
+20190517T170756.277+0300 INFO  [main] com.microfocus.git.connector.MarksFileWatchService: Watching ./dimensions/origin listening to any marks changes
+20190517T170756.279+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Last Mark id 5
+20190517T170756.282+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: option progress false
+20190517T170756.282+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent option progress false
+20190517T170756.282+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command 'option', Option 'progress', Value 'false'
+20190517T170756.282+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: option verbosity 1
+20190517T170756.282+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent option verbosity 1
+20190517T170756.283+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command 'option', Option 'verbosity', Value '1'
+20190517T170756.283+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Verbose mode
+20190517T170756.283+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: list
+20190517T170756.283+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent list
+20190517T170756.283+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Listing refs on remote
+20190517T170756.300+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Connection String dimensions://dmsys@stl-ta-vcw12-8:671/cm_typical@dim12/qlarius/java_brancha_str/
+20190517T170756.330+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Parsed as Username dmsys Host stl-ta-vcw12-8 Port 671 database cm_typical dbconn dim12 product qlarius stream java_brancha_str folder  version -1
+20190517T170756.331+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path 'null'
+20190517T170756.365+0300 ERROR [Thread-5] com.microfocus.git.connector.scm.SCMUserCredentials: fatal: credential helper 'store --file ~/.my-credentials' told us to quit
+20190517T170816.630+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Obtained connection to Dimensions server running at stl-ta-vcw12-8:671:cm_typical@dim12 
+20190517T170816.632+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Dimensions server is on build [14.6, 2, 14.6.0 Build 9.107] 
+20190517T170816.637+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T170816.660+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T170817.269+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: 
+20190517T170817.270+0300 INFO  [main] com.microfocus.git.connector.commands.ListReferenceCommand: Found number of branches 0 
+20190517T170817.270+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T170817.284+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: export
+20190517T170817.285+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent export
+20190517T170817.291+0300 INFO  [Thread-2] com.microfocus.git.connector.MarksFileWatchService: git.marks file updated...Reloading it
+20190517T170817.294+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T170817.300+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T170817.305+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T170817.320+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T170817.327+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Connection string dimensions://dmsys@stl-ta-vcw12-8:671/cm_typical@dim12/qlarius/java_brancha_str/  dimensions://dmsys@stl-ta-vcw12-8:671/cm_typical@dim12/qlarius/java_brancha_str/ 
+20190517T170817.590+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: feature done
+20190517T170817.591+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: blob
+20190517T170817.591+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Read blob
+20190517T170817.591+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: mark :6
+20190517T170817.591+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: data 322
+20190517T170817.591+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Mark id 6 322
+20190517T170817.591+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Writing to temp file Mark6
+20190517T170817.594+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: writing numBytes 322 
+20190517T170817.600+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: 
+20190517T170817.601+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: commit refs/heads/master
+20190517T170817.601+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: mark :7
+20190517T170817.601+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Read commit markId mark :7
+20190517T170817.601+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Matched pattern 7 7 
+20190517T170817.601+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Commit id 7 
+20190517T170817.601+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: author DMSYS <dmsys@dmsys-VirtualBox> 1558102065 +0300
+20190517T170817.601+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Read author data author DMSYS <dmsys@dmsys-VirtualBox> 1558102065 +0300
+20190517T170817.601+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Matched patternn  DMSYS dmsys@dmsys-VirtualBox 1558102065 +0300 
+20190517T170817.601+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: committer DMSYS <dmsys@dmsys-VirtualBox> 1558102065 +0300
+20190517T170817.604+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Read committer data committer DMSYS <dmsys@dmsys-VirtualBox> 1558102065 +0300 
+20190517T170817.604+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: When 1558102065 timezone +0300
+20190517T170817.607+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Found commit 24d018908f5466dd2a565ea6d03b12c29c81b331 by mark 7
+20190517T170817.608+0300 INFO  [main] com.microfocus.git.connector.mapping.ChangesetCommitMapUtil: File config git-cm 
+20190517T170817.609+0300 INFO  [main] com.microfocus.git.connector.mapping.ChangesetCommitMapUtil: Shortened ref name refs/heads/master 
+20190517T170817.610+0300 INFO  [main] com.microfocus.git.connector.mapping.ChangesetCommitMapUtil: Corresponding SCM Ref uid 4217404 
+20190517T170817.611+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Date Fri May 17 17:07:45 EEST 2019
+20190517T170817.612+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Matched committer pattern DMSYS dmsys@dmsys-VirtualBox 1558102065 
+20190517T170817.612+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: data 18
+20190517T170817.613+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Export line: commit from ubuntu
+20190517T170817.613+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Dry run false 
+20190517T170817.613+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: from :5
+20190517T170817.613+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Next line from :5
+20190517T170817.614+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: from 5
+20190517T170817.752+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Ref master 
+20190517T170817.796+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Master head commit id 24d018908f5466dd2a565ea6d03b12c29c81b331
+20190517T170817.801+0300 INFO  [main] com.microfocus.git.connector.mapping.ChangeSetCommitMap: branch name refs/heads/master
+20190517T170817.807+0300 INFO  [main] com.microfocus.git.connector.mapping.ChangeSetCommitMap: branch name refs/heads/master
+20190517T170818.040+0300 INFO  [main] com.microfocus.git.connector.mapping.ChangeSetCommitMap: branch name refs/heads/master
+20190517T170818.063+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: M 100644 :6 "Qlarius Underwriter/qlarius/utilities/FileIO.java"
+20190517T170818.063+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Next line M 100644 :6 "Qlarius Underwriter/qlarius/utilities/FileIO.java"
+20190517T170818.069+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Matched file modify pattern Mode 100644 markid 6 addFilePath Qlarius Underwriter/qlarius/utilities/FileIO.java 
+20190517T170818.071+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: 
+20190517T170818.072+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Next line 
+20190517T170818.091+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Completed processing a commit
+20190517T170818.563+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: done
+20190517T170820.270+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Mapping changeset 284 to commit id 24d018908f5466dd2a565ea6d03b12c29c81b331
+20190517T170820.298+0300 INFO  [main] com.microfocus.git.connector.commands.PushCommand: Committed to Dimensions successfully
+20190517T170820.485+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Released connection to Dimensions server running at stl-ta-vcw12-8:671:cm_typical@dim12 
+20190517T170820.486+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: 
+20190517T170820.508+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Push finished with status true
+20190517T170820.510+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: 
+#logback.classic pattern: %date{yyyyMMdd'T'HHmmss.SSSZ} %-5level [%thread] %logger{64}: %msg%n
+20190517T173004.278+0300 INFO  [main] com.microfocus.git.connector.RemoteHelperApp: Argument => version
+#logback.classic pattern: %date{yyyyMMdd'T'HHmmss.SSSZ} %-5level [%thread] %logger{64}: %msg%n
+20190517T173154.071+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => origin
+20190517T173154.074+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => dimensions://stl-ta-vcw12-8/cm_typical@dim12/qlarius/java_brancha_str/*
+20190517T173154.075+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => /home/dmsys/git/abc/.git
+20190517T173154.092+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '/home/dmsys/git/abc/.git'
+20190517T173154.214+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: capabilities
+20190517T173154.214+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent capabilities
+20190517T173154.216+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Git dir /home/dmsys/git/abc/.git
+20190517T173154.216+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: user dir /home/dmsys/eclipse/java-2018-12/eclipse
+20190517T173154.218+0300 INFO  [main] com.microfocus.git.connector.MarksFileWatchService: Watching /home/dmsys/git/abc/.git/dimensions/origin listening to any marks changes
+20190517T173154.245+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Last Mark id -1
+20190517T173154.245+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: option progress false
+20190517T173154.245+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent option progress false
+20190517T173154.245+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command 'option', Option 'progress', Value 'false'
+20190517T173154.247+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: option verbosity 1
+20190517T173154.247+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent option verbosity 1
+20190517T173154.248+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command 'option', Option 'verbosity', Value '1'
+20190517T173154.249+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Verbose mode
+20190517T173154.250+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: list
+20190517T173154.250+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent list
+20190517T173154.250+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Listing refs on remote
+20190517T173154.270+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Connection String dimensions://stl-ta-vcw12-8/cm_typical@dim12/qlarius/java_brancha_str/
+20190517T173154.318+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Parsed as Username null Host stl-ta-vcw12-8 Port 671 database cm_typical dbconn dim12 product qlarius stream java_brancha_str folder  version -1
+20190517T173154.330+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path 'null'
+20190517T173157.555+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Obtained connection to Dimensions server running at stl-ta-vcw12-8:671:cm_typical@dim12 
+20190517T173157.558+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Dimensions server is on build [14.6, 2, 14.6.0 Build 9.107] 
+20190517T173157.562+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '/home/dmsys/git/abc/.git'
+20190517T173157.576+0300 INFO  [main] com.microfocus.git.connector.commands.AbstractCommand: Git dir /home/dmsys/git/abc/.git/.git exists=false isDirectoryfalse
+20190517T173157.576+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path 'null'
+20190517T173157.801+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: 
+20190517T173157.803+0300 INFO  [main] com.microfocus.git.connector.commands.ListReferenceCommand: Found number of branches 0 
+20190517T173157.804+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '/home/dmsys/git/abc/.git'
+20190517T173157.827+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: option cloning true
+20190517T173157.827+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent option cloning true
+20190517T173157.829+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command 'option', Option 'cloning', Value 'true'
+20190517T173157.836+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: import refs/heads/master
+20190517T173157.837+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent import refs/heads/master
+20190517T173157.837+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: import refs/heads/master
+20190517T173157.838+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: 
+20190517T173157.839+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '/home/dmsys/git/abc/.git'
+20190517T173157.867+0300 INFO  [main] com.microfocus.git.connector.commands.CloneCommand: Git working dir /home/dmsys/git/abc/.git/.git
+20190517T173157.867+0300 INFO  [main] com.microfocus.git.connector.commands.CloneCommand: GIT working directory /home/dmsys/git/abc/.git
+20190517T173157.966+0300 INFO  [main] com.microfocus.git.connector.commands.CloneCommand: no Large file extensions set 
+20190517T173158.126+0300 INFO  [main] com.microfocus.git.connector.commands.CloneCommand: Last change set id 288 
+20190517T173158.126+0300 INFO  [main] com.microfocus.git.connector.commands.CloneCommand: Temporary working directory for checkouts /tmp/git-st5451496397580379012
+20190517T173158.360+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Fetching files from Stream - QLARIUS:JAVA_BRANCHA_STR Folder-  to directory /tmp/git-st5451496397580379012
+20190517T173158.723+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService:  Change set 288 date Fri May 17 15:26:46 EEST 2019 
+20190517T173200.286+0300 INFO  [main] com.microfocus.git.connector.commands.CloneCommand: Updating changeset commit maps..
+20190517T173200.294+0300 INFO  [main] com.microfocus.git.connector.util.Configuration: No process item prompt option found in config
+20190517T173200.333+0300 INFO  [main] com.microfocus.git.connector.util.Configuration: Configuration changes saved succesfully
+20190517T173200.520+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Released connection to Dimensions server running at stl-ta-vcw12-8:671:cm_typical@dim12 
+20190517T173200.547+0300 INFO  [main] com.microfocus.git.connector.commands.CloneCommand: Disconnected from SCM server
+20190517T173200.547+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Clone finished with status true
+20190517T173200.547+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: 
+#logback.classic pattern: %date{yyyyMMdd'T'HHmmss.SSSZ} %-5level [%thread] %logger{64}: %msg%n
+20190517T173324.339+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => origin
+20190517T173324.348+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => dimensions://stl-ta-vcw12-8/cm_typical@dim12/qlarius/java_brancha_str/*
+20190517T173324.348+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => .
+20190517T173324.372+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T173324.831+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: capabilities
+20190517T173324.832+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent capabilities
+20190517T173324.836+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Git dir .
+20190517T173324.837+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: user dir /home/dmsys/git/abc/.git
+20190517T173324.839+0300 INFO  [main] com.microfocus.git.connector.MarksFileWatchService: Watching ./dimensions/origin listening to any marks changes
+20190517T173324.876+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Last Mark id 1
+20190517T173324.876+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: option progress false
+20190517T173324.877+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent option progress false
+20190517T173324.877+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command 'option', Option 'progress', Value 'false'
+20190517T173324.879+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: option verbosity 1
+20190517T173324.879+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent option verbosity 1
+20190517T173324.880+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command 'option', Option 'verbosity', Value '1'
+20190517T173324.880+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Verbose mode
+20190517T173324.889+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: list
+20190517T173324.889+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent list
+20190517T173324.889+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Listing refs on remote
+20190517T173324.919+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Connection String dimensions://stl-ta-vcw12-8/cm_typical@dim12/qlarius/java_brancha_str/
+20190517T173324.952+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Parsed as Username null Host stl-ta-vcw12-8 Port 671 database cm_typical dbconn dim12 product qlarius stream java_brancha_str folder  version -1
+20190517T173324.961+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path 'null'
+20190517T173328.886+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Obtained connection to Dimensions server running at stl-ta-vcw12-8:671:cm_typical@dim12 
+20190517T173328.888+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Dimensions server is on build [14.6, 2, 14.6.0 Build 9.107] 
+20190517T173328.898+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T173328.954+0300 INFO  [main] com.microfocus.git.connector.commands.AbstractCommand: Git dir ./.git exists=false isDirectoryfalse
+20190517T173328.954+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path 'null'
+20190517T173329.251+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: 
+20190517T173329.252+0300 INFO  [main] com.microfocus.git.connector.commands.ListReferenceCommand: Found number of branches 0 
+20190517T173329.252+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T173329.260+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: export
+20190517T173329.261+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent export
+20190517T173329.264+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T173329.276+0300 INFO  [main] com.microfocus.git.connector.commands.AbstractCommand: Git dir ./.git exists=false isDirectoryfalse
+20190517T173329.281+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path 'null'
+20190517T173329.282+0300 INFO  [Thread-2] com.microfocus.git.connector.MarksFileWatchService: git.marks file updated...Reloading it
+20190517T173329.294+0300 ERROR [main] com.microfocus.git.connector.commands.AbstractCommand: Command failed with error
+com.microfocus.git.connector.exception.GitConfigurationException: Dimensions server configuration could not be loaded from repository.
+	at com.microfocus.git.connector.util.ConfigurationManager.getConfiguration(ConfigurationManager.java:71)
+	at com.microfocus.git.connector.util.ConfigurationManager.getConfiguration(ConfigurationManager.java:59)
+	at com.microfocus.git.connector.util.ConfigurationManager.verifyConfigured(ConfigurationManager.java:122)
+	at com.microfocus.git.connector.commands.AbstractCommand.preConditions(AbstractCommand.java:81)
+	at com.microfocus.git.connector.commands.PushCommand.preConditions(PushCommand.java:861)
+	at com.microfocus.git.connector.commands.AbstractCommand.run(AbstractCommand.java:48)
+	at com.microfocus.git.connector.RemoteHelper.handleExport(RemoteHelper.java:366)
+	at com.microfocus.git.connector.RemoteHelper.processInput(RemoteHelper.java:219)
+	at com.microfocus.git.connector.RemoteHelper.main(RemoteHelper.java:174)
+20190517T173329.297+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Error: Dimensions server configuration could not be loaded from repository.
+20190517T173329.317+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Push finished with status false
+#logback.classic pattern: %date{yyyyMMdd'T'HHmmss.SSSZ} %-5level [%thread] %logger{64}: %msg%n
+20190517T180641.317+0300 INFO  [main] com.microfocus.git.connector.RemoteHelperApp: Argument => version
+#logback.classic pattern: %date{yyyyMMdd'T'HHmmss.SSSZ} %-5level [%thread] %logger{64}: %msg%n
+20190517T181918.342+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => origin
+20190517T181918.347+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => dimensions://stl-ta-vcw12-8/cm_typical@dim12/qlarius/java_brancha_str/*
+20190517T181918.347+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => .
+20190517T181918.376+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T181918.618+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: capabilities
+20190517T181918.619+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent capabilities
+20190517T181918.624+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Git dir .
+20190517T181918.624+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: user dir /home/dmsys/git/abc/.git
+20190517T181918.626+0300 INFO  [main] com.microfocus.git.connector.MarksFileWatchService: Watching ./dimensions/origin listening to any marks changes
+20190517T181918.657+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Last Mark id 3
+20190517T181918.660+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: option progress false
+20190517T181918.660+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent option progress false
+20190517T181918.660+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command 'option', Option 'progress', Value 'false'
+20190517T181918.661+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: option verbosity 1
+20190517T181918.661+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent option verbosity 1
+20190517T181918.661+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command 'option', Option 'verbosity', Value '1'
+20190517T181918.661+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Verbose mode
+20190517T181918.662+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: list
+20190517T181918.662+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent list
+20190517T181918.662+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Listing refs on remote
+20190517T181918.687+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Connection String dimensions://stl-ta-vcw12-8/cm_typical@dim12/qlarius/java_brancha_str/
+20190517T181918.733+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Parsed as Username null Host stl-ta-vcw12-8 Port 671 database cm_typical dbconn dim12 product qlarius stream java_brancha_str folder  version -1
+20190517T181918.740+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path 'null'
+20190517T181922.687+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Obtained connection to Dimensions server running at stl-ta-vcw12-8:671:cm_typical@dim12 
+20190517T181922.688+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Dimensions server is on build [14.6, 2, 14.6.0 Build 9.107] 
+20190517T181922.689+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T181922.698+0300 INFO  [main] com.microfocus.git.connector.commands.AbstractCommand: Git dir ./.git exists=false isDirectoryfalse
+20190517T181922.698+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path 'null'
+20190517T181922.996+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: 
+20190517T181922.999+0300 INFO  [main] com.microfocus.git.connector.commands.ListReferenceCommand: Found number of branches 0 
+20190517T181922.999+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T181923.015+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: export
+20190517T181923.017+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent export
+20190517T181923.029+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '.'
+20190517T181923.042+0300 INFO  [main] com.microfocus.git.connector.commands.AbstractCommand: Git dir ./.git exists=false isDirectoryfalse
+20190517T181923.042+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path 'null'
+20190517T181923.051+0300 ERROR [main] com.microfocus.git.connector.commands.AbstractCommand: Command failed with error
+com.microfocus.git.connector.exception.GitConfigurationException: Dimensions server configuration could not be loaded from repository.
+	at com.microfocus.git.connector.util.ConfigurationManager.getConfiguration(ConfigurationManager.java:71)
+	at com.microfocus.git.connector.util.ConfigurationManager.getConfiguration(ConfigurationManager.java:59)
+	at com.microfocus.git.connector.util.ConfigurationManager.verifyConfigured(ConfigurationManager.java:122)
+	at com.microfocus.git.connector.commands.AbstractCommand.preConditions(AbstractCommand.java:81)
+	at com.microfocus.git.connector.commands.PushCommand.preConditions(PushCommand.java:861)
+	at com.microfocus.git.connector.commands.AbstractCommand.run(AbstractCommand.java:48)
+	at com.microfocus.git.connector.RemoteHelper.handleExport(RemoteHelper.java:366)
+	at com.microfocus.git.connector.RemoteHelper.processInput(RemoteHelper.java:219)
+	at com.microfocus.git.connector.RemoteHelper.main(RemoteHelper.java:174)
+20190517T181923.053+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Error: Dimensions server configuration could not be loaded from repository.
+20190517T181923.072+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Push finished with status false
+#logback.classic pattern: %date{yyyyMMdd'T'HHmmss.SSSZ} %-5level [%thread] %logger{64}: %msg%n
+20190517T182008.328+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => origin
+20190517T182008.335+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => dimensions://stl-ta-vcw12-8/cm_typical@dim12/qlarius/java_brancha_str/*
+20190517T182008.335+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Argument => /home/dmsys/git/work3/.git
+20190517T182008.371+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '/home/dmsys/git/work3/.git'
+20190517T182008.520+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: capabilities
+20190517T182008.521+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent capabilities
+20190517T182008.523+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Git dir /home/dmsys/git/work3/.git
+20190517T182008.523+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: user dir /home/dmsys/eclipse/java-2018-12/eclipse
+20190517T182008.525+0300 INFO  [main] com.microfocus.git.connector.MarksFileWatchService: Watching /home/dmsys/git/work3/.git/dimensions/origin listening to any marks changes
+20190517T182008.544+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Last Mark id -1
+20190517T182008.544+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: option progress false
+20190517T182008.544+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent option progress false
+20190517T182008.545+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command 'option', Option 'progress', Value 'false'
+20190517T182008.545+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: option verbosity 1
+20190517T182008.545+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent option verbosity 1
+20190517T182008.545+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command 'option', Option 'verbosity', Value '1'
+20190517T182008.545+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Verbose mode
+20190517T182008.545+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: list
+20190517T182008.545+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent list
+20190517T182008.546+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Listing refs on remote
+20190517T182008.561+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Connection String dimensions://stl-ta-vcw12-8/cm_typical@dim12/qlarius/java_brancha_str/
+20190517T182008.582+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Parsed as Username null Host stl-ta-vcw12-8 Port 671 database cm_typical dbconn dim12 product qlarius stream java_brancha_str folder  version -1
+20190517T182008.589+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path 'null'
+20190517T182011.516+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Obtained connection to Dimensions server running at stl-ta-vcw12-8:671:cm_typical@dim12 
+20190517T182011.520+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Dimensions server is on build [14.6, 2, 14.6.0 Build 9.107] 
+20190517T182011.528+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '/home/dmsys/git/work3/.git'
+20190517T182011.572+0300 INFO  [main] com.microfocus.git.connector.commands.AbstractCommand: Git dir /home/dmsys/git/work3/.git/.git exists=false isDirectoryfalse
+20190517T182011.572+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path 'null'
+20190517T182011.817+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: 
+20190517T182011.818+0300 INFO  [main] com.microfocus.git.connector.commands.ListReferenceCommand: Found number of branches 0 
+20190517T182011.818+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '/home/dmsys/git/work3/.git'
+20190517T182011.826+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: option cloning true
+20190517T182011.826+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent option cloning true
+20190517T182011.827+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command 'option', Option 'cloning', Value 'true'
+20190517T182011.828+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: import refs/heads/master
+20190517T182011.829+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Command sent import refs/heads/master
+20190517T182011.829+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: import refs/heads/master
+20190517T182011.832+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: 
+20190517T182011.832+0300 INFO  [main] com.microfocus.git.connector.util.RepositoryUtil: Find repository by path '/home/dmsys/git/work3/.git'
+20190517T182011.855+0300 INFO  [main] com.microfocus.git.connector.commands.CloneCommand: Git working dir /home/dmsys/git/work3/.git/.git
+20190517T182011.857+0300 INFO  [main] com.microfocus.git.connector.commands.CloneCommand: GIT working directory /home/dmsys/git/work3/.git
+20190517T182011.954+0300 INFO  [main] com.microfocus.git.connector.commands.CloneCommand: no Large file extensions set 
+20190517T182012.116+0300 INFO  [main] com.microfocus.git.connector.commands.CloneCommand: Last change set id 288 
+20190517T182012.116+0300 INFO  [main] com.microfocus.git.connector.commands.CloneCommand: Temporary working directory for checkouts /tmp/git-st532309837290574036
+20190517T182012.328+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Fetching files from Stream - QLARIUS:JAVA_BRANCHA_STR Folder-  to directory /tmp/git-st532309837290574036
+20190517T182012.690+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService:  Change set 288 date Fri May 17 15:26:46 EEST 2019 
+20190517T182014.094+0300 INFO  [main] com.microfocus.git.connector.commands.CloneCommand: Updating changeset commit maps..
+20190517T182014.099+0300 INFO  [main] com.microfocus.git.connector.util.Configuration: No process item prompt option found in config
+20190517T182014.109+0300 INFO  [main] com.microfocus.git.connector.util.Configuration: Configuration changes saved succesfully
+20190517T182014.295+0300 INFO  [main] c.m.git.connector.scm.dimensions.DimensionsConnectionService: Released connection to Dimensions server running at stl-ta-vcw12-8:671:cm_typical@dim12 
+20190517T182014.331+0300 INFO  [main] com.microfocus.git.connector.commands.CloneCommand: Disconnected from SCM server
+20190517T182014.332+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Clone finished with status true
+20190517T182014.332+0300 INFO  [main] com.microfocus.git.connector.RemoteHelper: Export line: 
