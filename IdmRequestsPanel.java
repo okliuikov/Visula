@@ -103,6 +103,7 @@ import com.serena.eclipse.dimensions.internal.ui.TableColumnModel;
 import com.serena.eclipse.dimensions.internal.ui.editors.ReportBrowserEditorInput;
 import com.serena.eclipse.dimensions.internal.ui.model.IdmRequestData;
 import com.serena.eclipse.dimensions.internal.ui.model.IdmWorkingListHolder;
+import com.serena.eclipse.ui.SortImageHelper;
 
 import merant.adm.dimensions.util.StringUtils;
 
@@ -136,8 +137,10 @@ public class IdmRequestsPanel implements IMenuListener {
     }
 
     private Map<SearchFields, String> filters = new HashMap<SearchFields, String>();
-    private Image imageAscending;
-    private Image imageDescending;
+//    private Image imageAscending;
+//    private Image imageDescending;
+
+    private SortImageHelper imageHelper;
 
     public IdmRequestsPanel(Composite parent, DimensionsConnectionDetailsEx connection, boolean allowCheckboxesInTable,
             boolean allowContextMenu) {
@@ -483,6 +486,7 @@ public class IdmRequestsPanel implements IMenuListener {
             tableStyle |= SWT.CHECK;
         }
         table = new Table(parent, tableStyle);
+        imageHelper = new SortImageHelper(table);
 
         GridData gridData = new GridData(GridData.FILL_HORIZONTAL | GridData.FILL_VERTICAL);
         table.setLayoutData(gridData);
@@ -645,7 +649,7 @@ public class IdmRequestsPanel implements IMenuListener {
 //                if (table.getSortDirection() == SWT.DOWN) {
 //                    result = -result;
 //                }
-                if (sortColumn.getImage() == imageDescending) {
+                if (sortColumn.getImage() == imageHelper.getImageDescending()) {
                     result = -result;
                 }
                 return result;
@@ -675,29 +679,17 @@ public class IdmRequestsPanel implements IMenuListener {
     }
 
     private void createColumns() {
-        createImages();
-        
+
         Listener sortListener = new Listener() {
-//            private Image imageAscending;
 
             public void handleEvent(Event e) {
-//                TableColumn column = (TableColumn) e.widget;
-//                table.setSortColumn(column);
-//                int direction = table.getSortDirection();
-//                direction = SWT.UP == direction ? SWT.DOWN : SWT.UP;
-//                table.setSortDirection(direction);
                 
                 TableColumn thisColumn = (TableColumn) e.widget;
-//                boolean ascending = column.getImage() == imageAscending;
-//                if (imageAscending == null) {
-//                    imageAscending = DMUIPlugin.getDefault().getImageDescriptor(IDMImages.OCTANE_REFRESH).createImage();
-//                }
-//                column.setImage(imageAscending);
-                if (thisColumn.getImage() == imageAscending) {
+                if (thisColumn.getImage() == imageHelper.getImageAscending()) {
                     // switch to descending
-                    thisColumn.setImage(imageDescending);
+                    thisColumn.setImage(imageHelper.getImageDescending());
                 } else {
-                    thisColumn.setImage(imageAscending);
+                    thisColumn.setImage(imageHelper.getImageAscending());
                 }
                 // we support single sort column only
                 for (TableColumn column : table.getColumns()) {
@@ -751,66 +743,66 @@ public class IdmRequestsPanel implements IMenuListener {
         return column;
     }
     
-    Image getColumnSortImage(boolean ascending) {
-        if (imageAscending == null || imageDescending == null) {
-            createImages();
-        }
-        if (ascending) {
-            return imageAscending;
-        } else {
-            return imageDescending;
-        }
-    }
+//    Image getColumnSortImage(boolean ascending) {
+//        if (imageAscending == null || imageDescending == null) {
+//            createImages();
+//        }
+//        if (ascending) {
+//            return imageAscending;
+//        } else {
+//            return imageDescending;
+//        }
+//    }
 
-    private void createImages() {
-        Control control = tableViewer.getControl();
-        int itemHeight = table.getItemHeight();
-
-        Color foreground = control.getForeground();
-        Color background = control.getBackground();
-
-        /* \/ - descending */
-        PaletteData palette = new PaletteData(new RGB[] { foreground.getRGB(), background.getRGB() });
-        ImageData imageData = new ImageData(itemHeight, itemHeight, 4, palette);
-        imageData.transparentPixel = 1;
-        imageDescending = new Image(control.getDisplay(), imageData);
-        GC gc = new GC(imageDescending);
-        gc.setBackground(background);
-        gc.fillRectangle(0, 0, itemHeight, itemHeight);
-        gc.setForeground(foreground);
-
-        int midPoint = itemHeight / 2;
-//        gc.drawPoint(midPoint, midPoint);
-        // triangle around midpoint
-//        gc.drawPolygon(new int[] { midPoint - 2, midPoint - 1, midPoint + 2, midPoint - 1, midPoint, midPoint + 1 });
-        gc.setBackground(foreground);
-        gc.fillPolygon(new int[] { midPoint - 6, midPoint - 3, midPoint + 6, midPoint - 3, midPoint, midPoint + 3 });
-
-        gc.dispose();
-
-        /* /\ - ascending */
-        palette = new PaletteData(new RGB[] { foreground.getRGB(), background.getRGB() });
-        imageData = new ImageData(itemHeight, itemHeight, 4, palette);
-        imageData.transparentPixel = 1;
-        imageAscending = new Image(control.getDisplay(), imageData);
-        gc = new GC(imageAscending);
-        gc.setBackground(background);
-        gc.fillRectangle(0, 0, itemHeight, itemHeight);
-//        gc.setForeground(foreground);
-        gc.setBackground(foreground);
-//        gc.drawPoint(midPoint, midPoint);
-        // triangle around midpoint
-//        gc.fillPolygon(new int[] { midPoint - 6, midPoint + 3, midPoint, midPoint - 3, midPoint + 6, midPoint + 3 });
-//        gc.fillPolygon(new int[] { midPoint - 6, midPoint + 4, midPoint, midPoint - 2, midPoint + 6, midPoint + 4 });
-        
-//        gc.fillPolygon(new int[] { midPoint - 6, midPoint + 2, midPoint, midPoint - 4, midPoint + 6, midPoint + 2 });
-        gc.fillPolygon(new int[] { midPoint - 7, midPoint + 3, midPoint, midPoint - 4, midPoint + 7, midPoint + 3 });
-        
-//        gc.fillPolygon(new int[] { midPoint - 5, midPoint + 2, midPoint, midPoint - 3, midPoint + 5, midPoint + 2 });
-        
-
-        gc.dispose();
-    }
+//    private void createImages() {
+////        Control control = tableViewer.getControl();
+//        int itemHeight = table.getItemHeight();
+//
+//        Color foreground = table.getForeground();
+//        Color background = table.getBackground();
+//
+//        /* \/ - descending */
+//        PaletteData palette = new PaletteData(new RGB[] { foreground.getRGB(), background.getRGB() });
+//        ImageData imageData = new ImageData(itemHeight, itemHeight, 4, palette);
+//        imageData.transparentPixel = 1;
+//        imageDescending = new Image(table.getDisplay(), imageData);
+//        GC gc = new GC(imageDescending);
+//        gc.setBackground(background);
+//        gc.fillRectangle(0, 0, itemHeight, itemHeight);
+////        gc.setForeground(foreground);
+//
+//        int midPoint = itemHeight / 2;
+////        gc.drawPoint(midPoint, midPoint);
+//        // triangle around midpoint
+////        gc.drawPolygon(new int[] { midPoint - 2, midPoint - 1, midPoint + 2, midPoint - 1, midPoint, midPoint + 1 });
+//        gc.setBackground(foreground);
+//        gc.fillPolygon(new int[] { midPoint - 6, midPoint - 3, midPoint + 6, midPoint - 3, midPoint, midPoint + 3 });
+//
+//        gc.dispose();
+//
+//        /* /\ - ascending */
+//        palette = new PaletteData(new RGB[] { foreground.getRGB(), background.getRGB() });
+//        imageData = new ImageData(itemHeight, itemHeight, 4, palette);
+//        imageData.transparentPixel = 1;
+//        imageAscending = new Image(control.getDisplay(), imageData);
+//        gc = new GC(imageAscending);
+//        gc.setBackground(background);
+//        gc.fillRectangle(0, 0, itemHeight, itemHeight);
+////        gc.setForeground(foreground);
+//        gc.setBackground(foreground);
+////        gc.drawPoint(midPoint, midPoint);
+//        // triangle around midpoint
+////        gc.fillPolygon(new int[] { midPoint - 6, midPoint + 3, midPoint, midPoint - 3, midPoint + 6, midPoint + 3 });
+////        gc.fillPolygon(new int[] { midPoint - 6, midPoint + 4, midPoint, midPoint - 2, midPoint + 6, midPoint + 4 });
+//        
+////        gc.fillPolygon(new int[] { midPoint - 6, midPoint + 2, midPoint, midPoint - 4, midPoint + 6, midPoint + 2 });
+//        gc.fillPolygon(new int[] { midPoint - 7, midPoint + 3, midPoint, midPoint - 4, midPoint + 7, midPoint + 3 });
+//        
+////        gc.fillPolygon(new int[] { midPoint - 5, midPoint + 2, midPoint, midPoint - 3, midPoint + 5, midPoint + 2 });
+//        
+//
+//        gc.dispose();
+//    }
 
 
     private List<IdmRequestData> getInboxRequests(DimensionsConnectionDetailsEx connection) throws DMException {
