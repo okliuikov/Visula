@@ -9,7 +9,10 @@ import org.eclipse.swt.graphics.ImageData;
 import org.eclipse.swt.graphics.PaletteData;
 import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.widgets.Table;
+// dimensionscac://stl-qa-vcw8ee64/cm_typical@dim14/QLARIUS/JAVA_BRANCHA_STR/
+// dimensionscac://stl-qa-vcw8ee64/cm_typical@dim14/qlarius/java_brancha_str
 
+// dimensions://stl-ta-vcw8-11/cm_typical@dim10/qlarius/java_brancha_str
 public class SortImageHelper implements DisposeListener {
 
     private Image imageDescending;
