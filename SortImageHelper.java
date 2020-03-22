@@ -14,6 +14,7 @@ import org.eclipse.swt.widgets.Table;
 
 // dimensions://stl-ta-vcw8-11/cm_typical@dim10/qlarius/java_brancha_str
 // dimensions://orl-dev-cm64prd/cmprod@dmprod/dmprod/CM_GIT_PLUGIN_pasilla
+//dimensions://stl-ta-vcrh6-3/cm_typical@dim14/qlarius/topic1
 public class SortImageHelper implements DisposeListener {
 
     private Image imageDescending;
