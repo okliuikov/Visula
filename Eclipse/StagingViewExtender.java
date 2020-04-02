@@ -59,6 +59,7 @@ import com.microfocus.dimensions.plugin.Activator;
 import com.microfocus.dimensions.plugin.jgit.services.EclipseDataManager;
 import com.microfocus.dimensions.plugin.utils.GitUtils;
 import com.microfocus.dimensions.plugin.utils.LoggerHelper;
+import com.microfocus.dimensions.plugin.utils.PlatformUtils;
 import com.microfocus.dimensions.plugin.utils.StringUtils;
 
 @SuppressWarnings("restriction")
@@ -67,7 +68,10 @@ public class StagingViewExtender {
     private static HashMap<StagingView, StagingViewExtender> instances;
     private StagingView stagingView = null;
 
+    // one is for windows, another is for another OSs
     private ApplyDefaultRequestContribution applyDefaultRequestContribution;
+    private Action applyDefaultRequestAction;
+    
     private Action selectDefaultRequestAction;
     private Action removeDefaultRequestAction;
 
@@ -147,7 +151,8 @@ public class StagingViewExtender {
         }
         Repository repository = stagingView.getCurrentRepository();
 
-        boolean enabled = applyDefaultRequestContribution.isEnabled();
+        boolean enabled = PlatformUtils.isWindows() ? applyDefaultRequestContribution.isEnabled() : 
+            applyDefaultRequestAction.isEnabled();
         if (repository == null || lastKnownRepository != repository) {
             if (repository == null || GitUtils.getDimensionsScmURI(repository) == null) {
                 enabled = false;
@@ -160,9 +165,14 @@ public class StagingViewExtender {
         }
         lastKnownRepository = repository;
 
-        if (enabled != applyDefaultRequestContribution.isEnabled()) {
+        if (enabled != PlatformUtils.isWindows() ? applyDefaultRequestContribution.isEnabled() : 
+            applyDefaultRequestAction.isEnabled()) {
             // do update actions and tool bar
-            applyDefaultRequestContribution.setEnabled(enabled);
+            if (PlatformUtils.isWindows()) {
+                applyDefaultRequestContribution.setEnabled(enabled);
+            } else {
+                applyDefaultRequestAction.setEnabled(enabled);    
+            }
             selectDefaultRequestAction.setEnabled(enabled);
             removeDefaultRequestAction.setEnabled(enabled);
             IActionBars actionBars = stagingView.getViewSite().getActionBars();
@@ -203,13 +213,34 @@ public class StagingViewExtender {
     }
 
     private void addApplyRequestAction(IToolBarManager manager, String targetPredecessorActionId) {
-    	
-    	applyDefaultRequestContribution = new ApplyDefaultRequestContribution();
-		if (!StringUtils.isNullEmpty(targetPredecessorActionId)) {
-			manager.insertBefore(targetPredecessorActionId, applyDefaultRequestContribution);
-		} else {
-			manager.add(applyDefaultRequestContribution);
-		}
+    	if (PlatformUtils.isWindows()) {
+    	    applyDefaultRequestContribution = new ApplyDefaultRequestContribution();
+    	    if (!StringUtils.isNullEmpty(targetPredecessorActionId)) {
+    	        manager.insertBefore(targetPredecessorActionId, applyDefaultRequestContribution);
+    	    } else {
+    	        manager.add(applyDefaultRequestContribution);
+    	    }
+    	} else {
+    	    applyDefaultRequestAction = new Action(noDefaultRequestText) {
+
+                @Override
+                public void run() {
+                    if (!GitUtils.isValidDimensionsRepository(stagingView.getCurrentRepository())) {
+                        return;
+                    }
+                    if (getText().equals(noDefaultRequestText)) {
+                        selectDefaultRequest();
+                    } else {
+                        applyRequest();
+                    }
+                }
+            };
+            if (!StringUtils.isNullEmpty(targetPredecessorActionId)) {
+                manager.insertBefore(targetPredecessorActionId, new ActionContributionItem(applyDefaultRequestAction));
+            } else {
+                manager.add(new ActionContributionItem(applyDefaultRequestAction));
+            }
+    	}
 		
     }
 
@@ -298,13 +329,25 @@ public class StagingViewExtender {
 
     	String oldText = applyDefaultRequestContribution.getText(); 
         if (!StringUtils.isNullEmpty(requestName)) {
-            applyDefaultRequestContribution.setText("[" + requestName + "]");
-            applyDefaultRequestContribution.setToolTipText(requestTitle);
+            if (PlatformUtils.isWindows()) {
+                applyDefaultRequestContribution.setText("[" + requestName + "]");
+                applyDefaultRequestContribution.setToolTipText(requestTitle);
+            } else {
+                applyDefaultRequestAction.setText("[" + requestName + "]");
+                applyDefaultRequestAction.setToolTipText(requestTitle);
+            }
         } else {
-        	applyDefaultRequestContribution.setText(noDefaultRequestText);
-        	applyDefaultRequestContribution.setToolTipText("");
+            if (PlatformUtils.isWindows()) {
+                applyDefaultRequestContribution.setText(noDefaultRequestText);
+                applyDefaultRequestContribution.setToolTipText("");
+            } else {
+                applyDefaultRequestAction.setText(noDefaultRequestText);
+                applyDefaultRequestAction.setToolTipText("");
+            }
         }
-        if (oldText.equals(applyDefaultRequestContribution.getText())) {
+        String newText = PlatformUtils.isWindows() ? applyDefaultRequestContribution.getText() : 
+            applyDefaultRequestAction.getText();  
+        if (oldText.equals(newText)) {
             return;
         }
         // update layout to adjust the contibution's button width
@@ -374,7 +417,8 @@ public class StagingViewExtender {
     }
 
     private String getRequestName() {
-        String currentRequestName = applyDefaultRequestContribution.getText();
+        String currentRequestName = PlatformUtils.isWindows() ? applyDefaultRequestContribution.getText() : 
+            applyDefaultRequestAction.getText();
         if (noDefaultRequestText.equals(currentRequestName)) {
             return "";
         }
@@ -497,7 +541,7 @@ public class StagingViewExtender {
         public int computeWidth(Control control) {
             String text = getText(); 
             if (StringUtils.isNullEmpty(text)) {
-                return 20;
+                text = noDefaultRequestText;
             }
             GC gc = new GC(button);
             int preferredWidth = gc.textExtent(text, 0).x + 2 * textIndent;
