@@ -71,7 +71,7 @@ public class StagingViewExtender {
     // one is for windows, another is for another OSs
     private ApplyDefaultRequestContribution applyDefaultRequestContribution;
     private Action applyDefaultRequestAction;
-    
+
     private Action selectDefaultRequestAction;
     private Action removeDefaultRequestAction;
 
@@ -112,7 +112,6 @@ public class StagingViewExtender {
         instances.remove(stagingView);
     }
 
-
     public String getRequestNameInBrackets() {
         String requestName = getRequestName();
         if (StringUtils.isNullEmpty(requestName)) {
@@ -124,7 +123,7 @@ public class StagingViewExtender {
     private void detachView() {
         stagingView = null;
     }
-    
+
     private void stopTimer() {
         updateTimer.cancel();
     }
@@ -151,8 +150,8 @@ public class StagingViewExtender {
         }
         Repository repository = stagingView.getCurrentRepository();
 
-        boolean enabled = PlatformUtils.isWindows() ? applyDefaultRequestContribution.isEnabled() : 
-            applyDefaultRequestAction.isEnabled();
+        boolean enabled = PlatformUtils.isWindows() ? applyDefaultRequestContribution.isEnabled()
+                : applyDefaultRequestAction.isEnabled();
         if (repository == null || lastKnownRepository != repository) {
             if (repository == null || GitUtils.getDimensionsScmURI(repository) == null) {
                 enabled = false;
@@ -165,13 +164,13 @@ public class StagingViewExtender {
         }
         lastKnownRepository = repository;
 
-        if (enabled != PlatformUtils.isWindows() ? applyDefaultRequestContribution.isEnabled() : 
-            applyDefaultRequestAction.isEnabled()) {
+        if (enabled != (PlatformUtils.isWindows() ? applyDefaultRequestContribution.isEnabled()
+                : applyDefaultRequestAction.isEnabled())) {
             // do update actions and tool bar
             if (PlatformUtils.isWindows()) {
                 applyDefaultRequestContribution.setEnabled(enabled);
             } else {
-                applyDefaultRequestAction.setEnabled(enabled);    
+                applyDefaultRequestAction.setEnabled(enabled);
             }
             selectDefaultRequestAction.setEnabled(enabled);
             removeDefaultRequestAction.setEnabled(enabled);
@@ -213,15 +212,15 @@ public class StagingViewExtender {
     }
 
     private void addApplyRequestAction(IToolBarManager manager, String targetPredecessorActionId) {
-    	if (PlatformUtils.isWindows()) {
-    	    applyDefaultRequestContribution = new ApplyDefaultRequestContribution();
-    	    if (!StringUtils.isNullEmpty(targetPredecessorActionId)) {
-    	        manager.insertBefore(targetPredecessorActionId, applyDefaultRequestContribution);
-    	    } else {
-    	        manager.add(applyDefaultRequestContribution);
-    	    }
-    	} else {
-    	    applyDefaultRequestAction = new Action(noDefaultRequestText) {
+        if (PlatformUtils.isWindows()) {
+            applyDefaultRequestContribution = new ApplyDefaultRequestContribution();
+            if (!StringUtils.isNullEmpty(targetPredecessorActionId)) {
+                manager.insertBefore(targetPredecessorActionId, applyDefaultRequestContribution);
+            } else {
+                manager.add(applyDefaultRequestContribution);
+            }
+        } else {
+            applyDefaultRequestAction = new Action(noDefaultRequestText) {
 
                 @Override
                 public void run() {
@@ -240,8 +239,8 @@ public class StagingViewExtender {
             } else {
                 manager.add(new ActionContributionItem(applyDefaultRequestAction));
             }
-    	}
-		
+        }
+
     }
 
     private void addRemoveRequestAction(IToolBarManager manager, String targetPredecessorActionId) {
@@ -327,7 +326,8 @@ public class StagingViewExtender {
 
     private void setDefaultRequest(String requestName, String requestTitle) {
 
-    	String oldText = applyDefaultRequestContribution.getText(); 
+        String oldText = PlatformUtils.isWindows() ? applyDefaultRequestContribution.getText()
+                : applyDefaultRequestAction.getText();
         if (!StringUtils.isNullEmpty(requestName)) {
             if (PlatformUtils.isWindows()) {
                 applyDefaultRequestContribution.setText("[" + requestName + "]");
@@ -345,8 +345,8 @@ public class StagingViewExtender {
                 applyDefaultRequestAction.setToolTipText("");
             }
         }
-        String newText = PlatformUtils.isWindows() ? applyDefaultRequestContribution.getText() : 
-            applyDefaultRequestAction.getText();  
+        String newText = PlatformUtils.isWindows() ? applyDefaultRequestContribution.getText()
+                : applyDefaultRequestAction.getText();
         if (oldText.equals(newText)) {
             return;
         }
@@ -361,7 +361,6 @@ public class StagingViewExtender {
             GitUtils.setDefaultRequestTitle(repository, requestTitle);
         }
     }
-
 
     private void applyRequest() {
         try {
@@ -417,8 +416,8 @@ public class StagingViewExtender {
     }
 
     private String getRequestName() {
-        String currentRequestName = PlatformUtils.isWindows() ? applyDefaultRequestContribution.getText() : 
-            applyDefaultRequestAction.getText();
+        String currentRequestName = PlatformUtils.isWindows() ? applyDefaultRequestContribution.getText()
+                : applyDefaultRequestAction.getText();
         if (noDefaultRequestText.equals(currentRequestName)) {
             return "";
         }
@@ -427,18 +426,19 @@ public class StagingViewExtender {
         }
         return currentRequestName;
     }
-    
-    // Need this special contribution because default action (button) won't get properly rendered when adding text to it
+
+    // Need this special contribution because default action (button) won't get
+    // properly rendered when adding text to it
     private class ApplyDefaultRequestContribution extends ControlContribution {
 
-        // button that will be added to tool bar 
+        // button that will be added to tool bar
         private Button button;
-        
+
         boolean isMouseOver = false;
         int textIndent = 6;
 
         public ApplyDefaultRequestContribution() {
-        	super("applyDefaultRequestId");
+            super("applyDefaultRequestId");
         }
 
         @Override
@@ -446,10 +446,10 @@ public class StagingViewExtender {
             if (button == null) {
                 System.out.println("Control is not created yet: cannot calculate enablement");
                 return false;
-            } 
+            }
             return button.isEnabled();
         }
-        
+
         public void setEnabled(boolean enabled) {
             if (button != null) {
                 button.setEnabled(enabled);
@@ -463,17 +463,17 @@ public class StagingViewExtender {
         }
 
         public void setToolTipText(String requestTitle) {
-			button.setToolTipText(requestTitle);
-		}
-
-		public void setText(String text) {
-        	if (button != null) {
-        	    button.setText(text);
-        	} else {
-        	    System.out.println("Control is not created yet: cannot apply request text");
-        	}
+            button.setToolTipText(requestTitle);
         }
-        
+
+        public void setText(String text) {
+            if (button != null) {
+                button.setText(text);
+            } else {
+                System.out.println("Control is not created yet: cannot apply request text");
+            }
+        }
+
         @Override
         protected Control createControl(Composite parent) {
 
@@ -505,23 +505,22 @@ public class StagingViewExtender {
                 }
             });
 
-        	button.addSelectionListener(new SelectionAdapter() {
-				@Override
-				public void widgetSelected(SelectionEvent e) {
-				    handleButtonClick();
-				}
+            button.addSelectionListener(new SelectionAdapter() {
+                @Override
+                public void widgetSelected(SelectionEvent e) {
+                    handleButtonClick();
+                }
 
-			});
-        	
-        	button.addTraverseListener(new TraverseListener()
-        	  {
+            });
+
+            button.addTraverseListener(new TraverseListener() {
                 @Override
                 public void keyTraversed(final TraverseEvent event) {
                     if (event.detail == SWT.TRAVERSE_RETURN) {
                         handleButtonClick();
                     }
                 }
-        	  });
+            });
 
             return button;
         }
@@ -536,10 +535,10 @@ public class StagingViewExtender {
                 applyRequest();
             }
         }
-        
+
         @Override
         public int computeWidth(Control control) {
-            String text = getText(); 
+            String text = getText();
             if (StringUtils.isNullEmpty(text)) {
                 text = noDefaultRequestText;
             }
@@ -550,5 +549,3 @@ public class StagingViewExtender {
         }
     }
 }
-
-
