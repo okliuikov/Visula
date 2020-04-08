@@ -28,3 +28,4 @@ Connect to Dimensions server:...Connect to Dimensions server:done               
     Repository dimensions://stl-ta-vcw12-8/cm_typical@dim12/qlarius/java_brancha_str/*
 
 git credential-store --file `/.my-credentials get: 1: git credential-store --file `/.my-credentials get: Syntax error: EOF in backquote substitutionConnect to Dimensions server:...Connect to Dimensions server:done                                 Error: Dimensions server configuration could not be loaded from repository.Everything up-to-date
+test1
