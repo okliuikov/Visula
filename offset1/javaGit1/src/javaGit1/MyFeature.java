@@ -5,4 +5,5 @@ public class MyFeature {
 	// user1: merged master and branch1
 	//aa
 	//rev for gitTag1
+	//rev for githubTag2
 }
