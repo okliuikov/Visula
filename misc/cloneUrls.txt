@@ -1,1 +1,2 @@
 dimensions://orl-dev-cm64prd/cmprod@dmprod/dmprod/CM_GIT_PLUGIN_ANAHEIM
+dimensions://stl-qa-vcw8ee64/cm_typical@dim14/qlarius/stream
