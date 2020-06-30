@@ -49,6 +49,7 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.ToolBar;
+import org.eclipse.swt.widgets.ToolItem;
 import org.eclipse.ui.IActionBars;
 
 import com.microfocus.common.plugin.request.Request;
@@ -72,7 +73,7 @@ public class StagingViewExtender {
 
     // one is for windows, another is for another OSs
     private ApplyDefaultRequestContribution applyDefaultRequestContribution;
-    private Action applyDefaultRequestAction;
+//    private Action applyDefaultRequestAction;
 
     private Action selectDefaultRequestAction;
     private Action removeDefaultRequestAction;
@@ -154,8 +155,9 @@ public class StagingViewExtender {
             return;
         }
         Repository repository = stagingView.getCurrentRepository();
-        boolean enabled = PlatformUtils.isWindows() ? applyDefaultRequestContribution.isEnabled()
-                : applyDefaultRequestAction.isEnabled();
+//        boolean enabled = PlatformUtils.isWindows() ? applyDefaultRequestContribution.isEnabled()
+//                : applyDefaultRequestAction.isEnabled();    
+        boolean enabled = applyDefaultRequestContribution.isEnabled();
 
         if (repository == null || lastKnownRepository != repository) {
             if (repository == null || GitUtils.getDimensionsScmURI(repository) == null) {
@@ -168,14 +170,17 @@ public class StagingViewExtender {
             }
         }
         if (lastKnownRepository != repository
-                || enabled != (PlatformUtils.isWindows() ? applyDefaultRequestContribution.isEnabled()
-                        : applyDefaultRequestAction.isEnabled())) {
+//                || enabled != (PlatformUtils.isWindows() ? applyDefaultRequestContribution.isEnabled()
+//                        : applyDefaultRequestAction.isEnabled())) {
+                || enabled != applyDefaultRequestContribution.isEnabled()) {
+
             // do update actions and tool bar
-            if (PlatformUtils.isWindows()) {
-                applyDefaultRequestContribution.setEnabled(enabled);
-            } else {
-                applyDefaultRequestAction.setEnabled(enabled);
-            }
+            applyDefaultRequestContribution.setEnabled(enabled);
+//            if (PlatformUtils.isWindows()) {
+//                applyDefaultRequestContribution.setEnabled(enabled);
+//            } else {
+//                applyDefaultRequestAction.setEnabled(enabled);
+//            }
             selectDefaultRequestAction.setEnabled(enabled);
             removeDefaultRequestAction.setEnabled(enabled);
 //            IActionBars actionBars = stagingView.getViewSite().getActionBars();
@@ -213,6 +218,9 @@ public class StagingViewExtender {
                     // TODO log
                     return;
                 }
+//                ToolItem item = 
+                new ToolItem(commitSectionToolBar, SWT.SEPARATOR, 0);
+//                item.
                 addRemoveRequestAction(commitSectionToolBar);
                 addSelectRequestAction(commitSectionToolBar);
                 addApplyRequestAction(commitSectionToolBar);
@@ -259,26 +267,30 @@ public class StagingViewExtender {
 //    }
     
     private void addApplyRequestAction(ToolBar toolBar) {
-        if (PlatformUtils.isWindows()) {
-            applyDefaultRequestContribution = new ApplyDefaultRequestContribution();
-            applyDefaultRequestContribution.fill(toolBar, 0);
-        } else {
-            applyDefaultRequestAction = new Action(Messages.SelectRequest) {
+        applyDefaultRequestContribution = new ApplyDefaultRequestContribution();
+        applyDefaultRequestContribution.fill(toolBar, 0);
 
-                @Override
-                public void run() {
-                    if (!GitUtils.isValidDimensionsRepository(stagingView.getCurrentRepository())) {
-                        return;
-                    }
-                    if (getText().equals(Messages.SelectRequest)) {
-                        selectDefaultRequest();
-                    } else {
-                        applyRequest();
-                    }
-                }
-            };
-            new ActionContributionItem(applyDefaultRequestAction).fill(toolBar, 0);
-        }
+        
+//        if (PlatformUtils.isWindows() ) {
+//            applyDefaultRequestContribution = new ApplyDefaultRequestContribution();
+//            applyDefaultRequestContribution.fill(toolBar, 0);
+//        } else {
+//            applyDefaultRequestAction = new Action(Messages.SelectRequest) {
+//
+//                @Override
+//                public void run() {
+//                    if (!GitUtils.isValidDimensionsRepository(stagingView.getCurrentRepository())) {
+//                        return;
+//                    }
+//                    if (getText().equals(Messages.SelectRequest)) {
+//                        selectDefaultRequest();
+//                    } else {
+//                        applyRequest();
+//                    }
+//                }
+//            };
+//            new ActionContributionItem(applyDefaultRequestAction).fill(toolBar, 0);
+//        }
 
     }
 
@@ -428,30 +440,43 @@ public class StagingViewExtender {
 
     private void setDefaultRequest(String requestName, String requestTitle) {
 
-        String oldText = PlatformUtils.isWindows() ? applyDefaultRequestContribution.getText()
-                : applyDefaultRequestAction.getText();
+//        String oldText = PlatformUtils.isWindows() ? applyDefaultRequestContribution.getText()
+//                : applyDefaultRequestAction.getText();
+        String oldText = applyDefaultRequestContribution.getText();
+
         if (!StringUtils.isNullEmpty(requestName)) {
-            if (PlatformUtils.isWindows()) {
-                applyDefaultRequestContribution.setText("[" + requestName + "]");
-                applyDefaultRequestContribution.setToolTipText(requestTitle);
-            } else {
-                applyDefaultRequestAction.setText("[" + requestName + "]");
-                applyDefaultRequestAction.setToolTipText(requestTitle);
-            }
+            applyDefaultRequestContribution.setText("[" + requestName + "]");
+            applyDefaultRequestContribution.setToolTipText(requestTitle);
+
+//            if (PlatformUtils.isWindows()) {
+//                applyDefaultRequestContribution.setText("[" + requestName + "]");
+//                applyDefaultRequestContribution.setToolTipText(requestTitle);
+//            } else {
+//                applyDefaultRequestAction.setText("[" + requestName + "]");
+//                applyDefaultRequestAction.setToolTipText(requestTitle);
+//            }
         } else {
-            if (PlatformUtils.isWindows()) {
-                applyDefaultRequestContribution.setText(Messages.SelectRequest);
-                applyDefaultRequestContribution.setToolTipText("");
-            } else {
-                applyDefaultRequestAction.setText(Messages.SelectRequest);
-                applyDefaultRequestAction.setToolTipText("");
-            }
+            applyDefaultRequestContribution.setText(Messages.SelectRequest);
+            applyDefaultRequestContribution.setToolTipText("");
+
+//            if (PlatformUtils.isWindows()) {
+//                applyDefaultRequestContribution.setText(Messages.SelectRequest);
+//                applyDefaultRequestContribution.setToolTipText("");
+//            } else {
+//                applyDefaultRequestAction.setText(Messages.SelectRequest);
+//                applyDefaultRequestAction.setToolTipText("");
+//            }
         }
-        String newText = PlatformUtils.isWindows() ? applyDefaultRequestContribution.getText()
-                : applyDefaultRequestAction.getText();
-        if (oldText.equals(newText)) {
+//        String newText = PlatformUtils.isWindows() ? applyDefaultRequestContribution.getText()
+//                : applyDefaultRequestAction.getText();
+
+//        if (oldText.equals(newText)) {
+//            return;
+//        }
+        if (oldText.equals(applyDefaultRequestContribution.getText())) {
             return;
         }
+        
         // update layout to adjust the contibution's button width
 //        stagingView.getViewSite().getActionBars().updateActionBars();
         updateCommitSectionToolBarLayout();
@@ -535,8 +560,10 @@ public class StagingViewExtender {
     }
 
     private String getRequestName() {
-        String currentRequestName = PlatformUtils.isWindows() ? applyDefaultRequestContribution.getText()
-                : applyDefaultRequestAction.getText();
+//        String currentRequestName = PlatformUtils.isWindows() ? applyDefaultRequestContribution.getText()
+//                : applyDefaultRequestAction.getText();
+        String currentRequestName = applyDefaultRequestContribution.getText();
+
         if (Messages.SelectRequest.equals(currentRequestName)) {
             return "";
         }
@@ -606,7 +633,17 @@ public class StagingViewExtender {
             parent.getDisplay().addFilter(SWT.MouseMove, new Listener() {
                 @Override
                 public void handleEvent(Event e) {
+                 // using xor operation to force redraw on linux when the 'mouse over' state changes
+                    boolean isMouseOverStateChanged = isMouseOver ^ e.widget == button;
                     isMouseOver = e.widget == button;
+                    
+                    if (!PlatformUtils.isWindows()) {
+                        if (isMouseOverStateChanged) {
+//                        System.out.println("isMouseOver has changed: " + isMouseOver);
+                            button.redraw();
+//                        button.update();
+                        }
+                    }
                 }
             });
 
@@ -616,6 +653,7 @@ public class StagingViewExtender {
             button.addPaintListener(new PaintListener() {
                 @Override
                 public void paintControl(PaintEvent event) {
+//                    System.out.println("paint control");
                     if (isMouseOver || button.isFocusControl() || !button.isEnabled()) {
                         // use default drawing in these cases
                         return;
@@ -626,6 +664,9 @@ public class StagingViewExtender {
                     int x = button.getSize().x / 2 - event.gc.textExtent(button.getText(), 0).x / 2;
                     if (x < textIndent) {
                         x = textIndent;
+                    }
+                    if (!PlatformUtils.isWindows()) {
+                        x -= 1;
                     }
                     event.gc.drawText(button.getText(), x, event.y + 3, SWT.DRAW_TRANSPARENT);
                 }
