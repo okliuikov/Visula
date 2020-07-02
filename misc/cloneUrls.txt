@@ -1,2 +1,93 @@
+dimensionscac://stl-qa-vcw12-4/cm_typical@dim10/qlarius/java_brancha_str
+dimensions://stl-qa-vcw12-4/cm_typical@dim10/qlarius/java_brancha_str
+
+
+-----------------------------------------------
+stl-qa-vcw8ee64
+dimensionscac://stl-qa-vcw8ee64/cm_typical@dim14/qlarius/java_brancha_str
+dimensionshttp://stl-qa-vcw8ee64:8282/cm_typical@dim14/qlarius/java_brancha_str
+dimensions://stl-qa-vcw8ee64/cm_typical@dim14/qlarius/java_brancha_str
+dimensions://dmsys:dmsys_test@stl-qa-vcw8ee64/cm_typical@dim14/qlarius/java_brancha_str
+dimensions://stl-qa-vcw8ee64:cac/cm_typical@dim14/qlarius/java_brancha_str
+
+dimensions://stl-qa-vcw12-3/cm_typical@dim14/qlarius/java_brancha_str
+
+dimensions://stl-qa-vcw12-5/cm_typical@dim10/qlarius
+
+-----------------------------------------------
+dimensionscac://stl-ta-vcw12-4/cm_typical@dim12/qlarius/java_brancha_str
+dimensions://stl-ta-vcw12-4/cm_typical@dim12/qlarius/java_brancha_str
+C:\temp\gitRepos\java_brancha_str.stl-ta-vcw12-4.ssoNoCac
+-----------------------------------------------
+
+dimensions://stl-ta-vcrh6-4/cm_typical@dim14/qlarius/java_brancha_str
+
+dimensions://stl-qa-vcw12-3/cm_typical@dim14/
+dimensions://stl-qa-vcw12-3/cm_typical@dim14/qlarius/java_brancha_str
+
+!!!! qa not ta !!!
+dimensions://stl-ta-vcw12-3/cm_typical@dim12/ - Просто сервер 
+
+dimensions://stl-ta-vcw12-6/cm_typical@dim12/ - Просто сервер
+
+
+dimensions://stl-qa-vcw12-4:cac/cm_typical@dim10/ - SSO/CAC
+
+dimensionscac://stl-qa-vcsl15-2/cm_typical@dim14/ - SSO/CAC
+
+
+dimensions://pol2k16.serena.com/cm_typical@dim14/ - SSO
+​
+
+dimensions://stl-ta-vcw8-11/cm_typical@dim10/qlarius/java_brancha_str
+dimensions://stl-qa-vcrh7-01/cm_typical@dim15/qlarius/java_brancha_str/
+dimensions://stl-qa-vcrh7-01/cm_typical@dim15/qlarius/java2/
+
+-------------------
+dimensions://stl-ta-vcw12-3/cm_typical@dim12/qlarius/java_brancha_str
+C:\temp\gitRepos\java_brancha_str.stl-ta-vcw12-3.simple1
+-------------------
+dimensionscac://stl-qa-vcsl15-2/cm_typical@dim14/qlarius/java_brancha_str
+dimensions://stl-qa-vcsl15-2:cac/cm_typical@dim14/qlarius/java_brancha_str
+C:\temp\gitRepos\java_brancha_str.stl-qa-vcsl15-2.cac
+-------------------
+
+dimensions://stl-qa-vcw12-4/cm_typical@dim10/qlarius/java_brancha_str
+C:\temp\gitRepos\java_brancha_str.stl-qa-vcw12-4.sso
+
+dimensions://stl-qa-vcw8r2-3:cac/cm_typical@dim10/qlarius/java_brancha_str
+
+
+git.exe clone dimensions://stl-qa-vcrh7-01/cm_typical@dim15/qlarius/java_brancha_str/ C:\temp\gitRepos\java_brancha_str2.2_aa_cmd --depth=1000
+git.exe clone dimensions://stl-ta-vcw8-11/cm_typical@dim10
+/qlarius/java_brancha_str C:\temp\gitRepos\java_brancha_str.xx
+
+
+javax.swing.UIManager$LookAndFeelInfo[Metal javax.swing.plaf.metal.MetalLookAndFeel]
+javax.swing.UIManager$LookAndFeelInfo[Nimbus javax.swing.plaf.nimbus.NimbusLookAndFeel]
+javax.swing.UIManager$LookAndFeelInfo[CDE/Motif com.sun.java.swing.plaf.motif.MotifLookAndFeel]
+javax.swing.UIManager$LookAndFeelInfo[Windows com.sun.java.swing.plaf.windows.WindowsLookAndFeel]
+javax.swing.UIManager$LookAndFeelInfo[Windows Classic com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel]
+
+
+UIManager.getSystemLookAndFeelClassName() .. com.sun.java.swing.plaf.windows.WindowsLookAndFeel
+
+
 dimensions://orl-dev-cm64prd/cmprod@dmprod/dmprod/CM_GIT_PLUGIN_ANAHEIM
-dimensions://stl-qa-vcw8ee64/cm_typical@dim14/qlarius/stream
+dimensions://orl-dev-cm64prd/cmprod@dmprod/dmprod/CM_GIT_PLUGIN_PASILLA
+dimensions://orl-dev-cm64prd/cmprod@dmprod/dmprod/CM_GIT_PLUGIN_SANDIA
+dimensions://orl-dev-cm64prd/cmprod@dmprod/dmprod/CM_GIT_PLUGIN
+
+C:\work.CM_GIT_PLUGIN_ANAHEIM.git
+
+26.70
+
+http://uad-esxdev4-cos1:8080/ui/?p=1001/1002#/my-items/my-works
+
+# WARNING: head commit changed in the meantime
+
+additional use case to verify: clone with password in the url (e.g. dimensions://dmsys:dmsys_test@stl-qa-vcw8ee64/cm_typical@dim14/qlarius/java_brancha_str) 
+should work as before, without any login form asking for password.
+
+
+
