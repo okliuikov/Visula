@@ -44,6 +44,10 @@ dimensions://stl-qa-vcrh7-01/cm_typical@dim15/qlarius/java_brancha_str/
 dimensions://stl-qa-vcrh7-01/cm_typical@dim15/qlarius/java2/
 
 -------------------
+dimensions://stl-qa-vcw12-2.serena.com/cm_typical@dim14/qlarius/java_brancha_str/
+
+
+-------------------
 dimensions://stl-ta-vcw12-3/cm_typical@dim12/qlarius/java_brancha_str
 C:\temp\gitRepos\java_brancha_str.stl-ta-vcw12-3.simple1
 -------------------
@@ -88,6 +92,5 @@ http://uad-esxdev4-cos1:8080/ui/?p=1001/1002#/my-items/my-works
 
 additional use case to verify: clone with password in the url (e.g. dimensions://dmsys:dmsys_test@stl-qa-vcw8ee64/cm_typical@dim14/qlarius/java_brancha_str) 
 should work as before, without any login form asking for password.
-
 
 
