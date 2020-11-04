@@ -65,7 +65,8 @@ public class MessageOverlay {
     private Scrollable scrollableToOverlay;
 
     private Link link;
-    private boolean isWindows = System.getProperty("os.name").toLowerCase().indexOf("win") >= 0;
+    private final boolean isWindows = System.getProperty("os.name").toLowerCase().indexOf("win") >= 0;
+    private final boolean isMac = System.getProperty("os.name").toLowerCase().indexOf("mac") >= 0;
 
     private DesiredAction desiredAction = DesiredAction.NONE;
     // schedules two kind of tasks: show with delay task and another one to hide overlay when parent control gets invisible
@@ -283,7 +284,7 @@ public class MessageOverlay {
             return;
         }
 
-        if (!shell.isVisible()) {
+if (!shell.isVisible()) {
             
             // detect currently active shell, we should avoid overlapping it by our shell then
             Shell activeShell = PlatformUI.getWorkbench().getDisplay().getActiveShell();
@@ -295,8 +296,17 @@ public class MessageOverlay {
             if (activeShell != null && !activeShell.isDisposed()) { 
                 if (activeShell != objectToOverlay.getShell()) {
                     System.out.println("active shell is: " + activeShell.getText());
+                    if (isMac) {
+                    	// additional trick for mac 
+                    	activeShell.setVisible(false);
+                    	activeShell.setVisible(true);
+                    }
                     // bring to front
                     activeShell.setActive();
+                    //activeShell.forceActive();
+//                    if (isMac) {
+//                    	hide_();
+//                    }
                 }
             }
         }
@@ -440,4 +450,5 @@ public class MessageOverlay {
         serviceTimer.schedule(actionWithDelayTask, 300);
     }
 }
+
 
