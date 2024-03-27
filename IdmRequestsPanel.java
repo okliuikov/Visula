@@ -119,6 +119,7 @@ public class IdmRequestsPanel implements IMenuListener {
     private IdmWorkingListHolder workingListHolder;
     private IdmRequestsPanel.DisplayMode displayMode = IdmRequestsPanel.DisplayMode.INBOX;
     private MenuManager menuManager;
+    // change #1
 
     private Table table;
     private TableViewer tableViewer;
