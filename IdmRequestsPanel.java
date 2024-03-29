@@ -120,6 +120,7 @@ public class IdmRequestsPanel implements IMenuListener {
     private IdmRequestsPanel.DisplayMode displayMode = IdmRequestsPanel.DisplayMode.INBOX;
     private MenuManager menuManager;
     // change #1
+    // change #2
 
     private Table table;
     private TableViewer tableViewer;
