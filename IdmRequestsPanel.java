@@ -121,6 +121,7 @@ public class IdmRequestsPanel implements IMenuListener {
     private MenuManager menuManager;
     // change #1
     // change #2
+    // change #3
 
     private Table table;
     private TableViewer tableViewer;
